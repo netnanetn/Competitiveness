@@ -1,0 +1,71 @@
+﻿
+/* vietnamese */
+@font-face {
+  font-family: 'Averta';
+  src: url("/Content/Averta/Averta-Light.ttf");
+  font-weight: 300;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Averta';
+  src: url("/Content/Averta/Averta-Regular.ttf");
+  font-weight: 400;
+  font-style: normal; }
+@font-face {
+  font-family: 'Averta';
+  src: url("/Content/Averta/Averta-Semibold.ttf");
+  font-weight: 500;
+  font-style: normal; }
+@font-face {
+  font-family: 'Averta';
+  src: url("/Content/Averta/Averta-Bold.ttf");
+  font-weight: 700;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url("/Content/OpenSans/OpenSans-Light.ttf");
+  font-weight: 300;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url("/Content/OpenSans/OpenSans-LightItalic.ttf");
+  font-weight: 300;
+  font-style: italic; }
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url("/Content/OpenSans/OpenSans-Regular.ttf");
+  font-weight: 400;
+  font-style: normal; }
+@font-face {
+  font-family: 'Open Sans';
+  src: url("/Content/OpenSans/OpenSans-Semibold.ttf");
+  font-weight: 500;
+  font-style: normal; }
+@font-face {
+  font-family: 'Open Sans';
+  src: url("/Content/OpenSans/OpenSans-Bold.ttf");
+  font-weight: 700;
+  font-style: normal; }
+
+
+body{
+    font-family : 'Open Sans';
+}
+
+.btn-registration{
+    font-size : 22px;
+    color : #fff;
+    display : inline-block;
+    background-color : #2ab137;
+    line-height : 68px;
+    padding : 0 35px;
+    border-radius : 35px;
+}
+.btn-registration:hover{
+    background-color : #23a12f;
+    text-decoration : none;
+    color : #fff;
+}

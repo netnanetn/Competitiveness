@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Weather>
+  <UpdatedTime>25/05/2012 14:07:45</UpdatedTime>
+  <Location>
+    <Code>VMXX0002</Code>
+    <Name>Bắc Giang</Name>
+    <Image_Today>/Content/weather/Images/38.png</Image_Today>
+    <Degree_Today>24°C - 28°C</Degree_Today>
+    <Desc_Today>Có thể có mưa rào và dông</Desc_Today>
+    <Image_Tomorrow>/Content/weather/Images/38.png</Image_Tomorrow>
+    <Degree_Tomorrow>25°C - 28°C</Degree_Tomorrow>
+    <Desc_Tomorrow>Có thể có mưa rào và dông</Desc_Tomorrow>
+  </Location>
+  <Location>
+    <Code>VMXX0003</Code>
+    <Name>Biên Hòa</Name>
+    <Image_Today>/Content/weather/Images/38.png</Image_Today>
+    <Degree_Today>25°C - 32°C</Degree_Today>
+    <Desc_Today>Có thể có mưa rào và dông</Desc_Today>
+    <Image_Tomorrow>/Content/weather/Images/38.png</Image_Tomorrow>
+    <Degree_Tomorrow>25°C - 32°C</Degree_Tomorrow>
+    <Desc_Tomorrow>Có thể có mưa rào và dông</Desc_Tomorrow>
+  </Location>
+  <Location>
+    <Code>VMXX0004</Code>
+    <Name>Cần Thơ</Name>
+    <Image_Today>/Content/weather/Images/38.png</Image_Today>
+    <Degree_Today>26°C - 31°C</Degree_Today>
+    <Desc_Today>Có thể có mưa rào và dông</Desc_Today>
+    <Image_Tomorrow>/Content/weather/Images/38.png</Image_Tomorrow>
+    <Degree_Tomorrow>26°C - 31°C</Degree_Tomorrow>
+    <Desc_Tomorrow>Có thể có mưa rào và dông</Desc_Tomorrow>
+  </Location>
+  <Location>
+    <Code>VMXX0005</Code>
+    <Name>Hải Phòng</Name>
+    <Image_Today>/Content/weather/Images/38.png</Image_Today>
+    <Degree_Today>25°C - 29°C</Degree_Today>
+    <Desc_Today>Có thể có mưa rào và dông</Desc_Today>
+    <Image_Tomorrow>/Content/weather/Images/38.png</Image_Tomorrow>
+    <Degree_Tomorrow>25°C - 28°C</Degree_Tomorrow>
+    <Desc_Tomorrow>Có thể có mưa rào và dông</Desc_Tomorrow>
+  </Location>
+  <Location>
+    <Code>VMXX0006</Code>
+    <Name>Hà Nội</Name>
+    <Image_Today>/Content/weather/Images/38.png</Image_Today>
+    <Degree_Today>24°C - 28°C</Degree_Today>
+    <Desc_Today>Có thể có mưa rào và dông</Desc_Today>
+    <Image_Tomorrow>/Content/weather/Images/38.png</Image_Tomorrow>
+    <Degree_Tomorrow>25°C - 27°C</Degree_Tomorrow>
+    <Desc_Tomorrow>Có thể có mưa rào và dông</Desc_Tomorrow>
+  </Location>
+  <Location>
+    <Code>VMXX0007</Code>
+    <Name>TP.Hồ Chí Minh</Name>
+    <Image_Today>/Content/weather/Images/38.png</Image_Today>
+    <Degree_Today>25°C - 32°C</Degree_Today>
+    <Desc_Today>Có thể có mưa rào và dông</Desc_Today>
+    <Image_Tomorrow>/Content/weather/Images/38.png</Image_Tomorrow>
+    <Degree_Tomorrow>25°C - 32°C</Degree_Tomorrow>
+    <Desc_Tomorrow>Có thể có mưa rào và dông</Desc_Tomorrow>
+  </Location>
+  <Location>
+    <Code>VMXX0008</Code>
+    <Name>Hòa Bình</Name>
+    <Image_Today>/Content/weather/Images/38.png</Image_Today>
+    <Degree_Today>24°C - 28°C</Degree_Today>
+    <Desc_Today>Có thể có mưa rào và dông</Desc_Today>
+    <Image_Tomorrow>/Content/weather/Images/38.png</Image_Tomorrow>
+    <Degree_Tomorrow>24°C - 28°C</Degree_Tomorrow>
+    <Desc_Tomorrow>Có thể có mưa rào và dông</Desc_Tomorrow>
+  </Location>
+  <Location>
+    <Code>VMXX0018</Code>
+    <Name>Vũng Tàu</Name>
+    <Image_Today>/Content/weather/Images/38.png</Image_Today>
+    <Degree_Today>25°C - 32°C</Degree_Today>
+    <Desc_Today>Có thể có mưa rào và dông</Desc_Today>
+    <Image_Tomorrow>/Content/weather/Images/38.png</Image_Tomorrow>
+    <Degree_Tomorrow>25°C - 32°C</Degree_Tomorrow>
+    <Desc_Tomorrow>Có thể có mưa rào và dông</Desc_Tomorrow>
+  </Location>
+  <Location>
+    <Code>VMXX0023</Code>
+    <Name>Lạng Sơn</Name>
+    <Image_Today>/Content/weather/Images/38.png</Image_Today>
+    <Degree_Today>22°C - 26°C</Degree_Today>
+    <Desc_Today>Có thể có mưa rào và dông</Desc_Today>
+    <Image_Tomorrow>/Content/weather/Images/38.png</Image_Tomorrow>
+    <Degree_Tomorrow>23°C - 28°C</Degree_Tomorrow>
+    <Desc_Tomorrow>Có thể có mưa rào và dông</Desc_Tomorrow>
+  </Location>
+  <Location>
+    <Code>VMXX0025</Code>
+    <Name>Thanh Hóa</Name>
+    <Image_Today>/Content/weather/Images/38.png</Image_Today>
+    <Degree_Today>24°C - 29°C</Degree_Today>
+    <Desc_Today>Có thể có mưa rào và dông</Desc_Today>
+    <Image_Tomorrow>/Content/weather/Images/38.png</Image_Tomorrow>
+    <Degree_Tomorrow>24°C - 28°C</Degree_Tomorrow>
+    <Desc_Tomorrow>Có thể có mưa rào và dông</Desc_Tomorrow>
+  </Location>
+  <Location>
+    <Code>VMXX0026</Code>
+    <Name>Vinh</Name>
+    <Image_Today>/Content/weather/Images/38.png</Image_Today>
+    <Degree_Today>25°C - 31°C</Degree_Today>
+    <Desc_Today>Có thể có mưa rào và dông</Desc_Today>
+    <Image_Tomorrow>/Content/weather/Images/38.png</Image_Tomorrow>
+    <Degree_Tomorrow>25°C - 29°C</Degree_Tomorrow>
+    <Desc_Tomorrow>Có thể có mưa rào và dông</Desc_Tomorrow>
+  </Location>
+  <Location>
+    <Code>VMXX0029</Code>
+    <Name>Nha Trang</Name>
+    <Image_Today>/Content/weather/Images/38.png</Image_Today>
+    <Degree_Today>26°C - 32°C</Degree_Today>
+    <Desc_Today>Có thể có mưa rào và dông</Desc_Today>
+    <Image_Tomorrow>/Content/weather/Images/38.png</Image_Tomorrow>
+    <Degree_Tomorrow>26°C - 32°C</Degree_Tomorrow>
+    <Desc_Tomorrow>Có thể có mưa rào và dông</Desc_Tomorrow>
+  </Location>
+  <Location>
+    <Code>VMXX0031</Code>
+    <Name>Cà Mau</Name>
+    <Image_Today>/Content/weather/Images/38.png</Image_Today>
+    <Degree_Today>27°C - 31°C</Degree_Today>
+    <Desc_Today>Có thể có mưa rào và dông</Desc_Today>
+    <Image_Tomorrow>/Content/weather/Images/38.png</Image_Tomorrow>
+    <Degree_Tomorrow>26°C - 32°C</Degree_Tomorrow>
+    <Desc_Tomorrow>Có thể có mưa rào và dông</Desc_Tomorrow>
+  </Location>
+</Weather>

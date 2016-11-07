@@ -1,0 +1,423 @@
+#ProductDetails .ProductImageThumb
+{
+    float: left;
+    text-align: center;
+    width: 230px;
+}
+dl, dt, dd, ul, li
+{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+#menu
+{
+    /*position: absolute;*/
+    width: 100%;
+    background-color: #454545;
+    font-family:Arial !important;
+}
+
+#menu dt
+{
+    cursor: pointer;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    font-weight: bold;
+    float: left;
+    padding: 0px 20px;
+    position:relative;
+}
+#menu dt #smenu1, #menu dt #smenu3
+{
+    line-height:normal;
+}
+#menu dd, #menu #smenu3, #menu #smenu1
+{
+    margin-top: 24px;
+    position: absolute;
+    z-index: 100;
+    clear: both;
+}
+#user
+{
+    background-color: #FFFFFF;
+    border-right: 1px solid #DBDBDB;
+    font-family: Arial;
+    vertical-align: top;
+}
+#user .header_user, #mess .header_user
+{
+    color: #5f5f5f;
+    font-weight: bold;
+    font-size: 11px;
+    font-family: Arial;
+    border-bottom: solid 1px #dbdbdb;
+    margin: 0px 13px;
+    line-height:normal;
+}
+#menu div#smenu1
+{
+    background-color: #FFFFFF;
+    border: 1px solid #DBDBDB;
+    margin-top: 0;
+    position: absolute;
+    right: -81px;
+}
+#menu div#smenu2
+{
+	background-color: #FFFFFF;
+    border: 1px solid #DBDBDB;
+    left: 0;
+    margin-top: 0;
+    position: absolute;
+    text-align: left;
+    width: 150px;
+    z-index:2000;
+}
+#menu div#smenu2 li
+{
+	border-bottom: 1px solid #DBDBDB;
+    width: 150px;
+}
+#menu div#smenu2 li:hover
+{
+	background-color:#626262;
+}
+#menu div#smenu2 li:hover a
+{
+	color:#fff;
+}
+#menu div#smenu2 a
+{
+	color: #5F5F5F;
+    font-size: 11px;
+    font-weight: normal;
+    line-height: 30px;
+    padding: 0 12px;
+}
+#header_nav .nav_right ul li {
+    line-height: normal;
+}
+.detail_cart li
+{
+    display:block;
+}
+#menu dt:hover a
+{
+	color:#e10202;
+}
+#menu dt:hover #user a, #menu dt:hover #mess a
+{
+	color:#5F5F5F;
+}
+#smenu1
+{
+    font-weight:normal;
+}
+#user .content_user a, #user .header_user a, #mess .header_user a, #mess .content_user a
+{
+    color: #5F5F5F;
+    font-size: 12px;
+    text-align: left;
+}
+.content_user li
+{
+	padding: 5px 13px !important;
+}
+#user .header_user a, #mess .header_user a
+{
+    font-weight:bold;    
+}
+#menu #cart
+{
+    width: 320px;
+    border: solid 1px #dbdbdb;
+    color: #5f5f5f;
+    background: #fff;
+}
+#cart .header_cart
+{
+    border-bottom: 1px solid #DBDBDB;
+    font-weight: bold;
+    margin: 0 13px;
+    text-align: left;
+}
+#wrapCartItem
+{
+	text-align:left;
+	font-weight:normal;
+}
+#cart .header_cart a
+{
+    font-weight:bold;
+    font-size:11px;    
+}
+#menu #cart .header_cart a, #menu #cart .content_cart a
+{
+    color: #5f5f5f;
+}
+#menu div#smenu1 #user
+{
+    width: 201px;
+}
+#menu div#smenu1 #mess
+{
+    width: 201px;
+    background-color: #fff;
+}
+#menu div#smenu3
+{
+    background-color: #FFFFFF;
+    left: -50px;
+    margin: 0;
+    position: absolute;
+}
+#menu dd#smenu4
+{
+    margin-left: 161px;
+}
+#menu li a, #menu dt a
+{
+    color: #fffefe;
+    text-decoration: none;
+}
+#mentions
+{
+    font-family: verdana, arial, sans-serif;
+    position: absolute;
+    bottom: 200px;
+    left: 10px;
+    color: #fffefe;
+    background-color: #ddd;
+}
+#mentions a
+{
+    text-decoration: none;
+    color: #222;
+}
+#mentions a:hover
+{
+    text-decoration: underline;
+}
+.images_cart
+{
+    width: 39px;
+    height: auto;
+}
+#cart .detail_cart
+{
+    width: 222px;
+}
+#menu #cart .detail_cart .tittle_detail a
+{
+    color: #5f5f5f;
+    font-weight: bold;
+    font-size:11px;
+}
+#menu #cart .detail_cart .price_detail a
+{
+    color: #ff0000;
+}
+#menu #cart .detail_cart:hover .price_detail a
+{
+   color:#25b0f8;
+}
+#menu #cart .detail_cart .more_detail a
+{
+    color: #afafaf;
+}
+.cart_more
+{
+    float: right;
+    margin: 10px 15px;
+}
+.cart_more a
+{
+    font-weight: bold;
+    font-size: 12px;
+    color: #5f5f5f;
+}
+.cart_li:hover
+{
+    background-color: #626262;
+}
+#menu #cart .cart_li:hover .tittle_detail a, #menu #cart .cart_li:hover .more_detail a
+{
+    color: #fff;
+}
+#menu #cart .cart_li:hover .price_detailer_cart a
+{
+    color: #25b0f8;
+}
+.cart_li .div_cart
+{
+    padding: 5px 0px;
+    margin: 0px 15px;
+    border-bottom: dotted 1px #d1d1d1;
+}
+.content_user li:hover
+{
+    background-color: #626262;
+    color: #fff;
+}
+#menu .content_user li:hover a, #menu .content_user li:hover span
+{
+    color: #fff !important;
+}
+.content_user li
+{
+    padding: 0px 13px;
+}
+#user .header_user
+{
+    margin: 0px 13px;
+}
+.clear{clear:both;}
+/* BEGIN POLICIES*/
+#policies ul li{list-style-type:disc;margin-left:20px;line-height:24px;}
+#policies ul li span{font-weight:bold;font-size:12px;}
+#policies ul li ul li{list-style-type:none;margin-left:10px;line-height:24px;}
+#policies ul li ul li span{font-weight:normal;font-size:12px;}
+/* END POLICIES*/
+#menu .text_top
+{
+    border:solid 1px #e2e2e2;
+    border-left:none;
+    height: 13px;
+    line-height:12px;
+    text-align: center;
+    display:inline-block;
+    vertical-align:top;
+    font-size:10px;
+    font-weight:bold;
+    padding:0px 3px;
+    background-color:#fff;
+    margin-top:9px;
+    color:#d30000;
+}
+#menu img
+{
+	vertical-align:middle;
+}
+#smenu1 #user li, #smenu1 #mess li
+{
+	padding-top:7px;
+	padding-bottom:7px;
+    text-align: left;
+}
+#header_nav .nav_left ul
+{
+    color: #92BE9B;
+    list-style: none outside none;
+}
+#header_nav .nav_left ul li
+{
+    color: #FFFEFE;
+    float: left;
+}
+#header_nav .nav_left ul li a
+{
+    color: #fffefe;
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 10px;
+}
+#header_nav .nav_left ul li:hover a, #menu dt:hover
+{
+	background-color:#ffffff;
+	color:#e10202;
+    border-radius: 3px 3px 0px 0px;
+}
+#header_nav
+{
+    background-color: #454545;
+    height: 30px;
+    padding-top: 1px;
+    color:White;
+}
+#header_nav a{color:White;}
+#header_nav .wrap_nav
+{
+    height: 30px;
+    margin: 0 auto;
+    width: 1000px;
+}
+#header_nav .nav_left
+{
+    float: left;
+    padding-left: 0;
+}
+#header_nav .nav_right
+{
+    float: right;
+    height: 30px;
+    padding-right: 10px;
+}
+#divfaq
+{
+    position: relative;
+}
+#divContentFaq
+{
+    color: #454545;
+    font-size: 13px;
+    right: 0px;
+    position: absolute;
+    top: 30px;
+    text-align: left;
+}
+#divContentFaq a
+{
+    color: #454545 !important;
+    font-size: 13px !important;
+    margin: 0 !important;
+}
+#divContentFaq p
+{
+    line-height: 18px;
+    margin: 7px 0;
+}
+.submit_button
+{
+    background-color: #E50202;
+    background-image: -moz-linear-gradient(#E50202, #A30000);
+    border: medium none !important;
+    border-radius: 5px 5px 5px 5px;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-family: Arial;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 3px 10px;
+}
+.submit_buttonRed
+{
+    background-color: #B5292D;
+    background-image: -moz-linear-gradient(90deg, #B5292D, #F7C4C5);
+    border: 1px solid #D0D0D0;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-family: Tahoma;
+    font-weight: bold;
+    margin-left: 5px;
+    padding: 2px 5px;
+}
+.content_user li
+{
+    width:175px;
+    line-height:normal;
+}
+#header_nav .wrap_nav .nav_left ul li:hover a{background-color:transparent !important; color:white; text-decoration:underline}
+#header_nav .nav_right dl#menu dt a{font-weight:bold;}
+#header_nav .nav_right dl#menu dt#label_cart #smenu3 .content_cart ul li {color:#5f5f5f}
+#header_nav .nav_right #smenu1 .content_user ul li a{font-weight:normal !important;}
+#header_nav .nav_right #smenu1 .content_user ul li a, #header_nav .nav_right #label_post #smenu2 ul li a{font-weight:normal !important; font-family:Arial !important;font-weight:normal;font-size:12px;}
+.header_user, #mess .header_user, .header_cart ul li{padding:4px 0 !important;}
+#header_nav .nav_right #smenu1 .header_user ul li{padding:2px 0;}
+#header_nav .nav_right #cart .header_cart ul li {padding:4px 0;}
+/*A TAG LOGOUT STYLE WHEN HOVER*/
+#header_nav .nav_right dl#menu dt.btn-log-out:hover,#header_nav .nav_right dl#menu dt.btn-log-out:hover a,#header_nav .nav_right dl#menu dt.btn-log-in:hover,#header_nav .nav_right dl#menu dt.btn-log-in:hover a, #header_nav .nav_right dl#menu dt.btn-reg:hover,#header_nav .nav_right dl#menu dt.btn-reg:hover a{background:transparent !important; text-decoration: underline;color:White;}
+/*END*/

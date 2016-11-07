@@ -1,0 +1,25 @@
+﻿ <div style="float:left;padding-right: 15px;">
+    @Img("LogoHangTot.png")
+</div>
+<div id="bottom_bottom_content">
+    © 2011 Hangtot.com - Website mua bán hàng đầu Việt nam <br />    Một sản phẩm của DKT Technology., JSC <br />    Địa chỉ: Tầng 7, Tòa nhà Thành Công, 57 Láng Hạ, Hà Nội - Điện thoại: 04.66558868
+</div>
+<div id="ajaxLoading" style="display:none">
+    <img src="/Content/Images/loading.gif" alt="loading" /> Đang tải dữ liệu...
+</div>
+<script type="text/javascript">
+    $(function () {
+        $('#ajaxLoading')
+            .hide()
+            .ajaxStart(function () {
+                $(this).show();
+            })
+            .ajaxStop(function () {
+                $(this).hide();
+            })
+        ;
+    });
+</script>
+<style type="text/css">
+    #ajaxLoading {position:fixed; top: 0; right: 0; padding:4px; background-color:Gray;color:yellow;z-index:10000}
+</style>

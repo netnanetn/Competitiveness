@@ -1,0 +1,32 @@
+﻿<div class="wrap_nav">
+<div class="nav_left">
+    <ul>
+      @*  <li><a href="/">Sản phẩm</a> | </li>*@
+        <li><a href="/raovat">Rao vặt</a> | </li>
+        @*<li><a href="#">Gian hàng</a> | </li>*@
+        <li><a href="http://tieudung.hangtot.com/">Tin tức</a>  | </li>
+        <li id="divfaq"><a href="#">Hỗ trợ</a>
+            @Html.Partial(ThemeViewPath + "Include/PopupFaq.cshtml")
+        </li>
+       @* <li><a href="#">Cộng đồng</a> | </li>
+        <li><a href="#">Hỗ trợ khách hàng</a></li>*@
+    </ul>
+</div>
+<div class="nav_right">
+    <ul>
+         @if (WorkContext.CurrentAccount == null)
+         { 
+            <li>Xin mời</li>
+            <li> @Html.ActionLink("Đăng nhập", "Login", new { area = "Accounts", controller = "Accounts" }) |</li>
+            <li> @Html.ActionLink("Đăng ký", "Register", new { area = "Accounts", controller = "Accounts" })</li>
+         }
+         else
+         { 
+            <li>Xin chào : </li>
+            <li>@Html.ActionLink(WorkContext.CurrentAccount.UserName, "Index", new { area = "RaoVat", controller = "ManageAds" })  </li>
+             @Html.ActionLink("Đăng xuất", "Logout", new { area = "Accounts", controller = "Accounts" }, new { style = "color:#FFFFFF;" })
+         }
+    </ul>
+</div>
+</div>
+

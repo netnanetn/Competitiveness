@@ -1,0 +1,42 @@
+﻿@model IEnumerable<StaticPage>
+           
+@{
+    Func<bool, string> getState = state => state ? "Hiển thị" : "Ẩn";
+}
+        
+@using (Html.BeginForm()){
+    @Html.Partial("_Toolbar")
+        
+    @(Html.Telerik().Grid(Model)
+        .Name("PageList")        
+        .Columns(columns =>
+        {
+            columns.Template(
+                @<text>
+                    @Html.ActionLink(item.Title, "details", new {controller = "Pages", title = item.SeoUrl})
+                </text>
+            ).Title("Tiêu đề");
+            columns.Bound(o => o.SeoUrl).Title("SEO Url");
+            columns.Bound(o => o.Layout).Title("Khung nội dung");
+            columns.Template(
+                @<text>
+                    @getState(item.IsActive)
+                </text>   
+            ).Title("Trạng thái");
+            columns.Bound(o => o.Created).Format("{0:dd/MM/yyyy hh:mm:ss}").Title("Ngày tạo");
+            columns.Bound(o => o.Modified).Format("{0:dd/MM/yyyy hh:mm:ss}").Title("cập nhật");
+            columns.Template(
+                @<text>
+                    @Html.ActionLink("Sửa", "edit", new {id = item.Id})
+                    |
+                    @Html.ActionLink("Xóa", "delete", new {id = item.Id}, new { onclick = "return deleteConfirm('Bạn có  chắc chắn muốn xóa người dùng này không?', '" + @Url.Action("delete", new {id = item.Id }) + "')" })                    
+                </text>).Title("Thao tác");
+        })
+        .Scrollable(scrolling => scrolling.Enabled(false))
+        .Sortable(sorting => sorting.Enabled(false))
+        .Pageable(paging => paging.Enabled(true).PageSize(10))
+        .Filterable(filtering => filtering.Enabled(false))
+        .Groupable(grouping => grouping.Enabled(false))
+        .Footer(true)
+        )
+}

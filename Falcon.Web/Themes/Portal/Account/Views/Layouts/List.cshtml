@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+    @Html.Partial("/Themes/Portal/Shared/Views/Include/Meta.cshtml")
+    @SetMeta(new Falcon.UI.Resources.MetaEntry { HttpEquiv = "Content-Type", Content = "text/html; charset=utf-8" })
+    @Html.Raw(ViewBag.ExtraHeader)
+    @Js("tiny_mce/jquery.tinymce.js?v=1.0")
+    @Js("swfobject.js?v=1.0")
+    @Js("jquery.uploadify.js?v=1.0")
+    @Js("jquery.tooltip.min.js?v=1.0")
+    @Js("ui.datepicker-vi.js?v=1.0")
+    <link href="@Url.Content("~/Content/Uploadify/uploadify.css")" media="all" rel="stylesheet" type="text/css" />
+    @(Html.Telerik().StyleSheetRegistrar()
+                    .DefaultGroup(group => group
+                            .DefaultPath("~/Content/telerik/")
+                            .Add("telerik.common.css")
+                            .Add("telerik.vista.min.css")
+                            .Combined(true)
+                            .Compress(true)
+                    ))
+    <script type="text/javascript">
+        var BASE_URL = "@Falcon.Infrastructure.EngineContext.Current.FalconConfig.DomainName";
+        var MEDIA_URL = "@Falcon.Infrastructure.EngineContext.Current.FalconConfig.MediaDomainName";
+        var THEME_PATH = "@AbsoluteThemePath";
+    </script>
+</head>
+<body>
+    <div id="home">
+        @Html.Partial("/Themes/Portal/Shared/Views/Include/ShareTop.cshtml")
+        <div id="primary">
+            <div id="main">
+                <div class="submenu-managestore">
+                    @Html.Partial(ThemeViewPath + "Include/SubMenu.cshtml")
+                </div>
+                <div class="content">
+                    <div id="messages">@Html.DisplayNotifications(TempData)</div>
+                    <div class="content_header">
+                        <div>
+                            <span>@ViewData["ToolbarTitle"]</span></div>
+                    </div>
+                    @RenderBody()
+                </div>
+            </div>
+        </div>
+        @Html.Partial("/Themes/Portal/Shared/Views/Include/ShareFooter.cshtml")
+    </div>
+</body>
+</html>

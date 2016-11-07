@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    @SetMeta(new Falcon.UI.Resources.MetaEntry { HttpEquiv = "Content-Type", Content = "text/html; charset=utf-8"})
+    @SetMeta("description", ViewBag.MetaDescription)
+    @SetMeta("keyword", ViewBag.MetaKeyword)
+
+    @Css("reset.css?v=1.0", new { media = "all" })
+    @Css("boxes.css?v=1.0", new { media = "all" })
+    @Css("custom.css?v=1.0", new { media = "all" })
+    @Css("print.css?v=1.0", new { media = "print" })
+    @Css("menu.css?v=1.0", new { media = "screen, projection" })
+    <!--[if lt IE 8]>
+    @Css("iestyles.css?v=1.0", new { media = "all" })
+    <![endif]-->
+    <!--[if lt IE 7]>
+    @Css("below_ie7.css?v=1.0", new { media = "all" })
+    <![endif]-->
+    <!--[if IE 7]>
+    @Css("ie7.css?v=1.0", new { media = "all" })
+    <![endif]-->
+    <link href="/Themes/Portal/Shared/Styles/ui-lightness/jquery-ui-1.8.16.custom.css?v=1.0" media="all" rel="stylesheet" type="text/css" />
+    @(Html.Telerik().StyleSheetRegistrar()
+                    .DefaultGroup(group => group
+                                            .DefaultPath("~/Content/telerik/")
+                                            .Add("telerik.common.css")
+                                            .Add("telerik.vista.min.css")
+                                            .Combined(true)
+                                            .Compress(true)
+                    ))
+
+    @Js("jquery-1.7.1.min.js?v=1.0")
+    @Js("jquery.validate.min.js?v=1.0")
+    @Js("jquery.validate.unobtrusive.min.js?v=1.0")
+    @Js("jquery-ui-1.8.17.js?v=1.0")
+    @Js("admin/admin.js?v=1.0")
+    @Js("admin/falcon.tabs.js?v=1.0")
+    @Js("fck-filemanager-browse.js?v=1.0")
+    @Js("tiny_mce/jquery.tinymce.js?v=1.0")
+    @Js("jstree/jquery.jstree.js?v=1.0")
+    @Js("swfobject.js?v=1.0")
+    @Js("jquery.uploadify.js?v=1.0")
+    @*@(Html.Telerik().ScriptRegistrar()
+                    .DefaultGroup(group => group.DefaultPath("~/Scripts/telerik"))
+                    .jQuery(false)
+                    .jQueryValidation(false))*@
+    @StackExchange.Profiling.MiniProfiler.RenderIncludes()
+    <script type="text/javascript">
+        var BASE_URL = "@Falcon.Infrastructure.EngineContext.Current.FalconConfig.DomainName";
+        var MEDIA_URL = "@Falcon.Infrastructure.EngineContext.Current.FalconConfig.MediaDomainName";
+        var THEME_PATH = "@AbsoluteThemePath";
+    </script>
+    <link rel="shortcut icon" href="/Themes/Portal/Default/Images/favicon.ico?v1" type="image/x-icon" />
+</head>
+<body id="html-body">
+    <!-- Google Tag Manager -->
+    <noscript>
+        <iframe src="//www.googletagmanager.com/ns.html?id=GTM-WM8XKV"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+            '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-WM8XKV');</script>
+    <!-- End Google Tag Manager -->
+    <div class="wrapper">
+        <div class="header">
+            <div class="header-top">
+                @Html.Partial(ThemeViewPath + "Include/Header.cshtml")            
+            </div>
+            <div class="clear">
+            </div>                        
+            <div class="nav-bar">
+                @Html.Partial(ThemeViewPath + "Include/Menu.cshtml")
+            </div>
+            @*<div class="notification-global">
+                @Html.Partial(ThemeViewPath + "Include/NotificationGlobal.cshtml")
+            </div>*@
+        </div>
+        <div id="anchor-content" class="middle">
+            <div id="page:main-container">
+                <div id="messages">@Html.DisplayNotifications(TempData)</div>
+                <div>
+                    @RenderBody()
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            @Html.Partial(ThemeViewPath + "Include/Footer.cshtml")
+        </div>
+    </div>
+</body>
+</html>

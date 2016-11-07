@@ -1,0 +1,62 @@
+﻿@if (!User.Identity.IsAuthenticated)
+    {  
+    <div id="divFrmLogin" title="<b>Đăng nhập</b>" style="display:none">       
+        @using (Html.BeginForm("Login", "Accounts", new {area = "Accounts", returnUrl = Request.Url.ToString() }, FormMethod.Post))
+        {        
+            <table class="tableInfo" cellpadding="0" cellspacing="10" border="0">
+                <tr>
+                    <td class="label">Tên đăng nhập hoặc Email</td>
+                    <td class="value">
+                      @*  @Html.TextBox("Id", "", new { style = "width:200px" ,id="AccountId"})  *@
+                        <input type="text" value="" style="width:200px" name="Id" id="AccountId"/>                          
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label" style="float:right;">Mật khẩu</td>
+                    <td class="value">
+                        @Html.Password("Password", "", new { style = "width:200px" })
+                    </td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>
+                        @Html.CheckBox("RememberMe", false, new { style = "color:#7a7a7a;" })
+                        <label for="RememberMe">Nhớ đăng nhập</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>               
+                        <input type="submit" class="submit_button" value="Đăng nhập" title="Đăng nhập" />
+                        @Html.ActionLink("Quên mật khẩu?", "ForgotPassword", new { area = "Accounts", controller = "Accounts" }, new { target = "_blank" })
+                        <br />
+                        @Html.ActionLink("Chưa có tài khoản? Đăng ký tại đây", "Register", new { area = "Accounts", controller = "Accounts" }, new { target = "_blank", style = "line-height:30px;" })
+                    </td>
+                </tr>
+            </table>
+        }
+    </div>     
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#divFrmLogin").dialog({
+                bgiframe: false,
+                resizable: false,
+                height: 220,
+                width: 450,
+                autoOpen: false,
+                modal: true,
+                overlay: {
+                    backgroundColor: '#000',
+                    opacity: 0.5
+                }
+            });
+            $("#lnkLogin").click(function () {
+                $("#divFrmLogin").dialog('open');
+                return false;
+            });
+            $("#imgCancel").click(function () {
+                $("#divFrmLogin").dialog('close');
+            });
+        });
+    </script>
+    }

@@ -1,0 +1,145 @@
+﻿@using StackExchange.Profiling;
+
+<div class="footer-1">
+    <div class="ft1">
+        <div class="footer-item about-us">
+            <div class="header">
+                <div class="header-icon">
+                    <img alt="Về chúng tôi" src="/Themes/Portal/Shared/Images/footer-about-us-icon.gif" />
+                </div>
+                <div class="header-text">
+                    <span>VỀ CHÚNG TÔI</span>
+                </div>
+                <div style="clear:both;"></div>
+            </div>
+            <div class="content">
+                <ul>
+                    <li><a href="http://hangtot.com/tro-giup/5/1/Gioi-thieu-ve-Cong-ty-Co-phan-Cong-nghe-DKT.html ">Công ty cổ phần công nghệ DKT</a></li>
+                    <li><a href="http://hangtot.com/tro-giup/5/3/Gioi-thieu-ve-website-TMDT-Hangtot-com.html ">Hangtot.com là gì?</a></li>
+                    <li><a href="http://hangtot.com/tro-giup/11/2/Quy-dinh-va-Dieu-khoan-su-dung.html ">Quy định và Điều khoản sử dụng</a></li>
+                    <li><a href="http://hangtot.com/tro-giup/16/Tin-tuyen-dung.html ">Tuyển dụng</a></li>
+                    <li><a href="http://hangtot.com/contacts ">Liên hệ</a></li>
+                </ul> 
+            </div>
+        </div>
+        <div class="footer-item for-members">
+            <div class="header">
+                <div class="header-icon">
+                    <img alt="Dành cho thành viên" src="/Themes/Portal/Shared/Images/footer-about-us-icon.gif" />
+                </div>
+                <div class="header-text">
+                    <span>DÀNH CHO THÀNH VIÊN</span>
+                </div>
+                <div style="clear:both;"></div>
+            </div>
+            <div class="content">
+                <ul>
+                    <li><a href="http://hangtot.com/tro-giup/17/9/Huong-dan-dang-ky-tai-khoan.html">Đăng ký thành viên </a></li>
+                    <li><a href="http://hangtot.com/tro-giup/13/7/Quy-dinh-su-dung-Rao-Vat.html">Quy định sử dụng Rao vặt </a></li>
+                    <li><a href="http://hangtot.com/tro-giup/17/11/Huong-dan-dang-tin-Rao-vat.html">Hướng dẫn đăng tin rao vặt </a></li>
+                    <li><a href="http://hangtot.com/tro-giup/12/12/Quy-dinh-su-dung-gian-hang.html">Quy định sử dụng Gian hàng</a></li>
+                    <li><a href="http://hangtot.com/tro-giup/17/10/Huong-dan-dang-ban-san-pham.html">Hướng dẫn đăng bán sản phẩm</a></li>
+                </ul> 
+            </div>
+        </div>
+        <div class="footer-item our-products">
+            <div class="header">
+                <div class="header-icon">
+                    <img alt="Sản phẩm khác" src="/Themes/Portal/Shared/Images/footer-about-us-icon.gif" />
+                </div>
+                <div class="header-text">
+                    <span>SẢN PHẨM KHÁC</span>
+                </div>
+                <div style="clear:both;"></div>
+            </div>
+            <div class="content">
+                <ul>
+                    <li><a href="http://bizweb.vn">Bizweb.vn</a></li>
+                    <li><a href="http://bizmail.vn">Bizmail.vn</a></li>
+                    <li><a href="http://lamsao.com">Lamsao.com</a></li>
+                    <li><a href="http://vietclick.com">Vietclick.com</a></li>
+                    <li><a href="http://doanhnhan.net">Doanhnhan.net</a></li>
+                </ul> 
+            </div>
+        </div>
+        <div style="clear:both;"></div>
+    </div>
+</div>
+<div class="footer-2">
+    <div class="ft2">
+        <div style="float: left; padding-right: 15px;">
+            @Img("LogoHangTot.png")
+        </div>
+        <div id="bottom_bottom_content">
+            © 2011 Hangtot.com - Website mua bán hàng đầu Việt nam
+            <br />
+            Một sản phẩm của DKT Technology., JSC
+            <br />
+            Địa chỉ: Tầng 4 Tòa nhà Hanoi Group, 442 Đội Cấn, Ba Đình, Hà Nội - Điện thoại: (04) 6674 2332
+        </div>
+        <div style="clear:both;"></div>
+    </div>
+    
+</div>
+
+@this.InitClientTimings()
+
+@Js("jquery.validate.min.js?v=1.0")
+@Js("jquery.validate.unobtrusive.min.js?v=1.0")
+@Js("jquery.colorbox.min.js?v=1.0")
+@Js("jquery.hover-intent.min.js?v=1.0")
+@Js("jshashtable-2.1.js?v=1.0")
+@Js("jquery.numberformatter-1.2.3.min.js?v=1.0")
+@Js("jquery.qtip.min.js?v=1.0")
+@Js("ui.datepicker-vi.js?v=1.0")
+
+ <script type="text/javascript">
+     var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+     document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+    try {
+        var pageTracker = _gat._getTracker("@(SystemSettingService.Get("GoogleAnalytics"))");
+        pageTracker._trackPageview();
+    } catch (err) { }
+</script>
+<div id="ajaxLoading" style="display:none">
+    <img src="/Content/Images/loading.gif" alt="loading" /> Đang tải dữ liệu...
+</div>
+<script type="text/javascript">
+    function ShowLoadingIndicator() {
+        if (typeof (disableLoadingIndicator) != 'undefined' && disableLoadingIndicator) {
+            return;
+        }
+        var windowWidth = $(window).width();
+        var scrollTop;
+        if (self.pageYOffset) {
+            scrollTop = self.pageYOffset;
+        }
+        else if (document.documentElement && document.documentElement.scrollTop) {
+            scrollTop = document.documentElement.scrollTop;
+        }
+        else if (document.body) {
+            scrollTop = document.body.scrollTop;
+        }
+        $('#ajaxLoading').css('position', 'absolute');
+        $('#ajaxLoading').css('top', scrollTop + 'px');
+        $('#ajaxLoading').css('left', parseInt((windowWidth - 150) / 2) + "px");
+        $('#ajaxLoading').show();
+    }
+    $(function () { 
+        $('#ajaxLoading')
+            .hide()
+            .ajaxStart(function () {
+                ShowLoadingIndicator();
+
+            })
+            .ajaxStop(function () {
+                $(this).hide();
+            })
+        ;
+    });
+</script>
+<style type="text/css">
+    #ajaxLoading {position:absolute; top: 0; right: 0; padding:4px; background-color:white;color:darkblue;font-weight:bold;z-index:10000;width:146px;border:1px solid darkblue }
+</style>

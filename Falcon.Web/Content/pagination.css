@@ -1,0 +1,63 @@
+﻿.pagination {
+    float: right;
+    overflow: hidden;
+    padding: 10px 0;
+    text-align: center;
+}
+.pagination ul {
+    float: right;
+    list-style: none outside none;
+    overflow: hidden;
+}
+.pagination ul li {
+    border: 1px solid #E4E4E4;
+    float: left;
+    margin: 0 3px;
+    padding: 2px 0;
+}
+.pagination ul li a {
+    color: #727171;
+    font-weight: bold;
+    padding: 7px;
+}
+.pagination ul li.active {
+    background-color: #D30101;
+    border: 1px solid #E2E2E2;
+}
+.pagination ul li.active a {
+    color: #FFFFFF;
+}
+.pagination ul li.active span {
+    color: #FFFFFF;
+    padding: 6px;
+}
+.pagination ul li.p_first {
+    background: url("../Images/icon_paging_prew.gif") no-repeat scroll 3px center transparent;
+}
+.pagination ul li.p_first a {
+    padding-left: 10px;
+}
+.pagination ul li.p_last {
+}
+.pagination ul li.p_last a {
+    background: url("../Images/icon_paging_next.gif") no-repeat scroll right center transparent;
+    margin-right: 3px;
+    padding-right: 10px;
+}
+
+
+/*BEGIN STYLE FOR ERROR TEXT NOTIFICATIONS ON CONTACT PAGE OF STORE !IMPORTANT*/
+span.field-validation-error {
+    color: Red;
+}
+.field-validation-error {
+    background: url("/Content/Images/validation_advice_bg.gif") no-repeat scroll 2px 1px transparent;
+    clear: both;
+    font-size: 0.95em;
+    font-weight: bold;
+    line-height: 1.25em;
+    margin-top: 3px;
+    min-height: 15px;
+    padding-left: 16px;
+}
+/*END STYLE FOR ERROR TEXT NOTIFICATIONS ON CONTACT PAGE OF STORE !IMPORTANT*/

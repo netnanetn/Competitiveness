@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+    @Html.Partial("/Themes/Portal/Shared/Views/Include/Meta.cshtml")
+    @SetMeta(new Falcon.UI.Resources.MetaEntry { HttpEquiv = "Content-Type", Content = "text/html; charset=utf-8" })
+    @Js("tiny_mce/jquery.tinymce.js?v=1.0")
+    @Js("swfobject.js?v=1.0")
+    @Js("jquery.uploadify.js?v=1.0")
+    @Js("jquery.tooltip.min.js?v=1.0")
+    @Js("ui.datepicker-vi.js?v=1.0")
+    @Js("admin/admin.js?v=1.0")
+    @Js("admin/falcon.tabs.js?v=1.0")
+    @Js("jquery.fancybox.pack.js?v=1.0")
+    @Js("jquery.mousewheel-3.0.6.pack.js?v=1.0")
+    @Js("ZeroClipboard.min.js") 
+    <link href="/Themes/Stores/StoreAdmin/Styles/boxes.css" media="all" rel="stylesheet"
+        type="text/css" />
+    <link href="/Content/fancybox/jquery.fancybox.css?v=1.0" media="all" rel="stylesheet"
+        type="text/css" />
+    <style type="text/css">
+        ul, ol
+        {
+            list-style: none;
+        }
+        dt
+        {
+            display: block;
+        }
+    </style>
+    <link href="/Content/Uploadify/uploadify.css?v=1.0" media="all" rel="stylesheet"
+        type="text/css" />
+    @(Html.Telerik().StyleSheetRegistrar()
+                    .DefaultGroup(group => group
+                            .DefaultPath("~/Content/telerik/")
+                            .Add("telerik.common.css")
+                            .Add("telerik.vista.min.css")
+                            .Combined(true)
+                            .Compress(true)
+                    ))
+    <script type="text/javascript">
+        var BASE_URL = "@Falcon.Infrastructure.EngineContext.Current.FalconConfig.DomainName";
+        var MEDIA_URL = "@Falcon.Infrastructure.EngineContext.Current.FalconConfig.MediaDomainName";
+        var THEME_PATH = "@AbsoluteThemePath";
+    </script>
+</head>
+<body>
+    <div id="home">
+        @Html.Partial("/Themes/Portal/Shared/Views/Include/ShareTop.cshtml")
+        @*<div id="sitemap">
+            @Html.Partial(ThemeViewPath + "Include/SiteMap.cshtml")
+        </div>*@ @*<div id="sitemap">
+            @Html.Partial(ThemeViewPath + "Include/SiteMap.cshtml")
+        </div>     
+        <div id="submenu">
+            <ul class="submenu">
+                <li >@Html.ActionLink("Đăng tin rao vặt", "Post", new { area = "RaoVat", controller = "ManageAds" })</li>
+                <li><a href="/raovat/ManageAds">Danh sách tin rao vặt </a></li>                
+            </ul>
+        </div>*@
+        <div id="primary">
+            <div id="main">
+                <div class="submenu-managestore">
+                    @Html.Partial(ThemeViewPath + "Include/SubMenu.cshtml")
+                </div>
+                <div id="messages">@Html.DisplayNotifications(TempData)</div>
+                
+                @RenderBody()
+            </div>
+        </div>
+        @Html.Partial("/Themes/Portal/Shared/Views/Include/ShareFooter.cshtml")
+    </div>
+</body>
+</html>

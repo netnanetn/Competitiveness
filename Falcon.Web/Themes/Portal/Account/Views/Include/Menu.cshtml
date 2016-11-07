@@ -1,0 +1,57 @@
+﻿@using Falcon.Mvc
+@{    
+    string area = MvcHelpers.GetAreaName(ViewContext.RouteData);
+    string currentMenu = "Account";
+    switch (area)
+    {
+        case "Accounts":
+            currentMenu = "Account";
+            break;
+        case "RaoVat":
+            currentMenu = "Raovat";
+            break;
+    }
+}
+@Js("jqueryslidemenu.js?v=1.0")
+@Css("jqueryslidemenu.css?v=1.0", new { media = "all" })
+
+<div class="jqueryslidemenu" id="myslidemenu">
+    <ul>
+        <li><a href="#" class="TopMenuItem"><span class="CornerLeft"></span><span class="menu_image_messages">
+        </span><span class="MenuText">Tin nhắn</span> <span class="Arrow"></span><span class="CornerRight">
+        </span></a>
+            <ul class="submenu">
+                <li><a href="@Url.Action("Send", new { area = "Messages", controller = "Messages" })">
+                    Gửi tin nhắn<span>Chức năng soạn tin nhắn cá nhân gửi tới thành viên khác</span>
+                </a></li>
+                <li><a href="@Url.Action("Receive", new { area = "Messages", controller = "Messages" })">
+                    Danh sách tin đã nhận<span>Quản lý, tìm kiếm, phản hồi, xóa các tin nhắn nhận từ thành
+                        viên khác</span> </a></li>
+                <li><a href="@Url.Action("Index", new { area = "Messages", controller = "Messages" })">
+                    Danh sách tin đã gửi<span>Quản lý, tìm kiếm, chuyển tiếp, xóa các tin nhắn đẫ gửi tới
+                        các thành viên khác</span></a> </li>
+            </ul>
+        </li>
+        <li><a href="#" class="TopMenuItem"><span class="CornerLeft"></span><span class="menu_image_accounts">
+        </span><span class="MenuText">Tài khoản</span> <span class="Arrow"></span><span class="CornerRight">
+        </span></a>
+            <ul>
+                <li><a href="@Url.Action("Index", new { area = "Accounts", controller = "Profile" })">
+                    Sửa thông tin cá nhân<span>Chỉnh sửa tên đăng nhập, thông tin cá nhân, ảnh đại diện,
+                        liên hệ trực tuyến</span></a> </li>
+                <li><a href="@Url.Action("ChangePassword", new { area = "Accounts", controller = "Profile" })">
+                    Đổi mật khẩu<span>Thay đổi mật khẩu đăng nhập tài khoản</span> </a></li>
+                <li><a href="@Url.Action("Index", new { area = "Gallery", controller = "Gallery" })">
+                    Thư viện ảnh<span>Chức năng quản lý, tìm kiếm, upload, xóa ảnh sản phẩm</span></a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var currentMenu = "@currentMenu";
+        $("#divMenu" + currentMenu).addClass("current_tab");
+    });
+</script>

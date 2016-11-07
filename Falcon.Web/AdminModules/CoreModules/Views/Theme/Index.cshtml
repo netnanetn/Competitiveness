@@ -1,0 +1,30 @@
+﻿@using Falcon.Admin.CoreModules.Models
+
+@model IEnumerable<ThemeModel>
+           
+@using (Html.BeginForm()){
+    @Html.Partial("_Toolbar")
+        
+    @(Html.Telerik().Grid(Model)
+        .Name("ThemeList")        
+        .Columns(columns =>
+        {                        
+            columns.Template(
+                @<text>
+                @Html.ActionLink(item.ThemeType, "Edit/" + item.ThemeType)
+                </text>
+            ).Title("Giao diện");
+            columns.Template(
+                @<text>
+                    <img src="@Url.Content(item.VirtualPath + "/Theme.png")" alt="Ảnh đại diện" title="Ảnh đại diện" style="max-height:150px;border:solid 1px gray" />
+                </text>    
+            ).Title("Ảnh đại diện");            
+        })
+        .Scrollable(scrolling => scrolling.Enabled(false))
+        .Sortable(sorting => sorting.Enabled(false))
+        .Pageable(paging => paging.Enabled(true).PageSize(10))
+        .Filterable(filtering => filtering.Enabled(false))
+        .Groupable(grouping => grouping.Enabled(false))
+        .Footer(true)
+        )
+}

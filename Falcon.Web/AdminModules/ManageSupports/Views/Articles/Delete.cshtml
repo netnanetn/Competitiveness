@@ -1,0 +1,29 @@
+﻿@model Article
+@using (Html.BeginForm())
+{
+    @Html.Partial("_Toolbar")
+                           
+    <div class="entry-edit">
+        <div class="entry-edit-head">
+            <h4 class="icon-head head-edit-form fieldset-legend">
+                Xác nhận xóa bài viết @Model.Name</h4>
+            <div class="form-buttons">
+            </div>
+        </div>
+        <div class="fieldset " id="user_base_fieldset">
+            <div class="hor-scroll">
+                @Html.HiddenFor(model => model.Id)
+                <table cellspacing="0" class="form-list">
+                    <tr>
+                        <td class="label">
+                            Bài viết hỗ trợ khách hàng
+                        </td>
+                        <td class="value">
+                            @Model.Name
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+}

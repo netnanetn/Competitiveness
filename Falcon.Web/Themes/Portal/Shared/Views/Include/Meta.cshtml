@@ -1,0 +1,35 @@
+﻿<title>@ViewBag.Title</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="google-site-verification" content="JicnhwVZUx-kj0-S5ZZkFx3zS-VRMkpZ8k17dEfn8bI" />
+@SetMeta("description", ViewBag.MetaDescription)
+@SetMeta("keyword", ViewBag.MetaKeyword)
+@if (ViewBag.CanonicalLink != null)
+{
+    <link rel="canonical" href="@ViewBag.CanonicalLink" />
+}
+<link rel="shortcut icon" href="/Themes/Portal/Default/Images/favicon.ico?v1" type="image/x-icon" />
+@Css("main.css?v=30115.5")
+@Css("bizweb-plus.css?4.0.040817")
+@Css("paging.css?v=100")
+@*<link href="/Themes/Portal/Default/Styles/FontOpenSans.css" rel="stylesheet" type="text/css" />*@
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,700,600italic,700italic,800,800italic&subset=latin,vietnamese' rel='stylesheet' type='text/css'>
+<link href="/Content/fancybox/jquery.fancybox.css" media="all" rel="stylesheet" type="text/css" />
+@Js("jquery-1.10.2.min.js")
+@Js("jquery.cookie.js")
+@Js("common.js?v=29115.1")
+<script type="text/javascript" src="/Content/fancybox/jquery.fancybox.js"></script>
+<script type="text/javascript">
+    var BASE_URL = "@Falcon.Infrastructure.EngineContext.Current.FalconConfig.DomainName";
+    var MEDIA_URL = "@Falcon.Infrastructure.EngineContext.Current.FalconConfig.MediaDomainName";
+    var THEME_PATH = "@AbsoluteThemePath";
+</script>
+@Html.Raw(ViewBag.ExtraHeader)
+@StackExchange.Profiling.MiniProfiler.RenderIncludes()
+<script type="text/javascript">
+    setTimeout(function () {
+        var a = document.createElement("script");
+        var b = document.getElementsByTagName("script")[0];
+        a.src = document.location.protocol + "//script.crazyegg.com/pages/scripts/0041/5407.js?" + Math.floor(new Date().getTime() / 3600000);
+        a.async = true; a.type = "text/javascript"; b.parentNode.insertBefore(a, b)
+    }, 1);
+</script>

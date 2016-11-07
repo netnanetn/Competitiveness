@@ -1,0 +1,56 @@
+﻿@{
+    string currentArea = Falcon.Mvc.MvcHelpers.GetAreaName(ViewContext.RouteData);
+    string currentController = Falcon.Mvc.MvcHelpers.GetControllerName(ViewContext.RouteData);
+    string currentAction = Falcon.Mvc.MvcHelpers.GetActionName(ViewContext.RouteData);
+
+    Func<string, string, string, string> getCurrentSubMenu = delegate(string action, string area, string controller)
+    {
+        if (currentArea.Equals(area) && currentController.Equals(controller) && currentAction.Equals(action))
+        {
+            return "current";
+        }
+        else
+        {
+            return "";
+        }
+
+    };
+    
+    
+}
+@switch (currentArea)
+{
+    case "Messages":
+    <ul>
+        <li class="@getCurrentSubMenu("Send", "Messages", "Messages")"><a href="@Url.Action("Send", new { area = "Messages", controller = "Messages" })">
+            Gửi tin nhắn </a></li>
+        <li class="@getCurrentSubMenu("Receive", "Messages", "Messages")"><a href="@Url.Action("Receive", new { area = "Messages", controller = "Messages" })">
+            Danh sách tin đã nhận</a></li>
+        <li class="@getCurrentSubMenu("Index", "Messages", "Messages")"><a href="@Url.Action("Index", new { area = "Messages", controller = "Messages" })">
+            Danh sách tin đã gửi</a> </li>
+    </ul>
+                                                                            break;    
+    case "Accounts":
+                if (currentController.Equals("Profile") && (currentAction.Equals("ChangePassword") || currentAction.Equals("Index")))
+                { 
+    <ul>
+        <li class="@getCurrentSubMenu("Index", "Accounts", "Profile")"><a href="@Url.Action("Index", new { area = "Accounts", controller = "Profile" })">
+            Sửa thông tin cá nhân</a> </li>        
+        <li class="@getCurrentSubMenu("ChangePassword", "Accounts", "Profile")"><a href="@Url.Action("ChangePassword", new { area = "Accounts", controller = "Profile" })">
+            Đổi mật khẩu</a></li>
+        <li class="@getCurrentSubMenu("Index", "Gallery", "Gallery")"><a href="@Url.Action("Index", new { area = "Gallery", controller = "Gallery" })">
+            Thư viện ảnh</a> </li>
+    </ul>
+                }
+                break;    
+    case "Gallery":
+    <ul>
+        <li class="@getCurrentSubMenu("Index", "Accounts", "Profile")"><a href="@Url.Action("Index", new { area = "Accounts", controller = "Profile" })">
+            Sửa thông tin cá nhân</a> </li>
+        <li class="@getCurrentSubMenu("ChangePassword", "Accounts", "Profile")"><a href="@Url.Action("ChangePassword", new { area = "Accounts", controller = "Profile" })">
+            Đổi mật khẩu</a></li>
+        <li class="@getCurrentSubMenu("Index", "Gallery", "Gallery")"><a href="@Url.Action("Index", new { area = "Gallery", controller = "Gallery" })">
+            Thư viện ảnh</a> </li>
+    </ul>
+                                                                               break;
+}

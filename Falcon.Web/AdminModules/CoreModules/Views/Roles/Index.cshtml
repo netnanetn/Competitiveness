@@ -1,0 +1,27 @@
+﻿@using Falcon.Data.Domain
+
+@model IEnumerable<Role>
+           
+@using (Html.BeginForm()){
+    @Html.Partial("_Toolbar")
+        
+    @(Html.Telerik().Grid(Model)
+        .Name("RoleList")        
+        .Columns(columns =>
+        {                        
+            columns.Template(
+                @<text>
+                @Html.ActionLink(item.Name, "Edit/" + item.Id)
+                </text>    
+            ).Title("Tên vai trò");            
+            columns.Bound(o => o.Description).Title("Mô tả");
+            columns.Template(
+                @<text>
+                    @Html.ActionLink("Người dùng", "ListUsers/" + item.Id)
+                    |
+                    @Html.ActionLink("Phân quyền", "EditPermission/" + item.Id)
+                </text>).Title("Thao tác");
+        })
+                                                        .Footer(false)
+                                                        )
+}

@@ -1,0 +1,135 @@
+﻿@model ListArticleModel
+
+@{
+    Func<bool, string> getState = state => state ? "Hiển thị" : "Ẩn";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.Partial("_Toolbar")
+
+    <div class="box_search" style="width: 100%;">
+        <table cellspacing="10" cellpadding="0">
+            <tbody>
+                <tr>
+                    <td>Tiêu đề</td>
+                    <td>@Html.TextBox("Keyword", "", new { @class = "input-text", style = "float:left;height:19px;width:200px;" })</td>                                  
+                    <td>Danh mục</td>
+                    <td>
+                        @{
+                            List<Category> subList = Model.ListCategories.ToList();
+                            object htmlAttributeSub = new { style = "height: 23px;" };
+                            bool disableSub = false;
+                            if (subList.Count == 0)
+                            {
+                                disableSub = true;
+                                htmlAttributeSub = new { style = "height: 23px;", disabled = "disabled" };
+                            }
+                            
+                            @Html.DropDownList("CategoryId", new SelectList(Model.ListCategories, "Id", "Name", !disableSub ? Model.CategoryId : 0), "--Danh mục--", htmlAttributeSub )
+                        }
+                    </td>
+                    <td>Trạng thái:</td>
+                    <td>@Html.DropDownList("Status", Model.ListStatus, "--Trạng thái--", new { style = "height: 23px" })</td>
+                    <td><input type="submit" name="submit" value="Tìm kiếm" class="form-button" /></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div id="PageList" class="t-widget t-grid">
+        <table cellspacing="0">
+            <thead class="t-grid-header">
+                <tr>
+                    <th scope="col" class="t-header">
+                        <span class="t-link">Tiêu đề</span>
+                    </th>
+                    <th scope="col" class="t-header" style="width: 50px">
+                        <span class="t-link">Trạng thái</span>
+                    </th>
+                    
+                    <th scope="col" class="t-header" style="width: 150px">
+                        <span class="t-link">Ngày tạo</span>
+                    </th>
+                    <th scope="col" class="t-header t-last-header" style="width: 250px">
+                        <span class="t-link">Thao tác</span>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.ListArticles)
+                {
+                    <tr id="article_@(item.Id)" displaystate="collapsed">
+                        <td style="vertical-align: middle;">
+                            @Html.ActionLink(item.Name, "Edit", new { controller = "Articles", id = item.Id })
+                        </td>
+                        <td>
+                            <span id="id_@(item.Id)">@getState(item.Status)</span>
+                        </td>                      
+                        <td>
+                            @Html.FormatDate(item.CreatedOn, "dd/MM/yyyy HH:mm:ss")
+                        </td>
+                        <td class="t-last">
+                            @Html.ActionLink("Sửa", "Edit", new { id = item.Id })
+                            |
+                            @*@Html.ActionLink("Xóa", "Delete", new { id = item.Id }, new { onclick = "return deleteConfirm('Bạn có  chắc chắn muốn xóa danh mục này không?', '" + @Url.Action("Delete", new { id = item.Id }) + "')" })*@
+                            @Html.ActionLink("Xóa", "Delete", new { id = item.Id })
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+  
+            <div class="t-grid-pager-boder">
+                @Html.Pager((PaginationModels)Model.PagerModel).HasNextPage(true).HasPreviousPage(true).DisplayFormat(true).RenderAdmin()
+            </div>
+        
+    </div>
+}
+<script type="text/javascript">
+    @*var catList = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model.ListCategories.Select(c => new { c.Id, c.Name, c.CategoryTypeId })));*@
+    @*var typeList = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model.ListCategoryTypes.Select(c => new { c.Id, c.Name })));*@
+
+    function getCatById(id)
+    {
+        var cat =  catList.filter(function(value,index){
+            return  value.Id == id;
+        });
+        return cat.length > 0 ? cat[0] : null;
+    }
+    function getCatByType(typeId)
+    {
+        return  catList.filter(function(value,index){
+            return  value.CategoryTypeId == typeId;
+        });
+    }
+    function setSelect(alias,dataValue,textValue,source,label)
+    {
+        $("option",alias).remove();
+        var select = $(alias);
+        if(select.prop) {
+            var options = select.prop('options');
+        }
+        else {
+            var options = select.attr('options');
+        }
+        options[0] = new Option(label,"",true,true);
+        if(source.length >0)
+        {
+            select.removeAttr("disabled");
+            $.each(source, function(index, value) {
+                options[options.length] =new Option(value[textValue],value[dataValue]);
+            });
+        }
+        else
+        {
+            select.attr("disabled","disabled");
+        }
+    }
+    function reloadData()
+    {
+        var typeId = $("select[name='CategoryTypeId']").val();
+        var category = getCatByType(typeId);
+        setSelect("select[name='CategoryId']","Id","Name",category,"--Danh mục--");
+    }
+</script>

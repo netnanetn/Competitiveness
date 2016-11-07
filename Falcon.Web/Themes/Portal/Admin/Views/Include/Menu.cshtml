@@ -1,0 +1,90 @@
+﻿@using Falcon.Mvc
+@{    
+    string menuEffect = "onmouseout=$(this).removeClass('over') onmouseover=$(this).addClass('over')";
+    string area = MvcHelpers.GetAreaName(ViewContext.RouteData);
+    string currentMenu = "dashboard";
+    switch (area)
+    {
+        case "Users":
+        case "Authorizations":
+        case "Themes":
+        case "SystemSettings":
+            currentMenu = "system";
+            break;
+        case "Pages":
+            currentMenu = "content";
+            break;
+    }
+}
+<ul id="nav">
+    <li id="nav-li-dashboard" class="level0">
+        @Html.ActionLinkSpan("Trang chủ", "Index", new { area = "CoreModules", controller = "dashboard" })
+    </li>  
+    <li id="nav-li-content" class="level0" @menuEffect>
+        <a href="#" onclick="return false;" ><span>Nội dung</span></a>
+        <ul>              
+            @*<li class="level1">
+                @Html.ActionLinkSpan("Trang tĩnh", "index", new { area = "Contents", controller = "pages" })
+            </li>
+            <li class="parent level1" @menuEffect>
+                <a href="javascript:void(0);" onclick="return false;"><span>Quản trị trợ giúp</span></a>
+                <ul>
+                    <li class="level2">
+                        @Html.ActionLinkSpan("Danh mục trợ giúp", "Index", new { area = "ManageSupports", controller = "Categories" })
+                    </li>
+                    <li class="level2">@Html.ActionLinkSpan("Bài viết trợ giúp", "Index", new { area = "ManageSupports", controller = "Articles" })</li>
+                </ul>
+            </li>*@
+            <li class="level1">
+                @Html.ActionLinkSpan("Tài liệu hướng dẫn sử dụng", "Index", new { area = "ManageSupports", controller = "Categories", typeId = 1 })
+            </li>
+            <li class="level1">
+                @Html.ActionLinkSpan("Themes", "Index", new { area = "ManageSupports", controller = "Categories", typeId = 2 })
+            </li>
+            <li class="level1">
+                @Html.ActionLinkSpan("APIs", "Index", new { area = "ManageSupports", controller = "Categories", typeId = 3 })
+            </li>
+            <li class="level1">
+                @Html.ActionLinkSpan("Câu hỏi trợ giúp - FAQ", "Index", new { area = "ManageSupports", controller = "Categories", typeId = 4 })
+            </li>
+            <li class="level1">
+                @Html.ActionLinkSpan("Video hướng dẫn", "Index", new { area = "ManageSupports", controller = "Categories", typeId = 5 })
+            </li>
+            <li class="parent level1" @menuEffect >
+                <a href="#" onclick="return false;"><span>Trợ giúp</span></a>
+                <ul>
+                    <li class="level2">@Html.ActionLinkSpan("Danh sách danh mục", "Index", new { area = "ManageSupports", controller = "Categories" })</li>
+                    <li class="level2">@Html.ActionLinkSpan("Danh sách bài viết", "Index", new { area = "ManageSupports", controller = "Articles" })</li>
+                </ul>
+            </li>
+        </ul>        
+    </li>
+    <li id="nav-li-system" class="level0" @menuEffect>
+        <a href="#" onclick="return false;" ><span>Hệ thống</span></a>        
+        <ul>
+            <li class="level1">
+                @Html.ActionLinkSpan("Thiết lập hệ thống", "Index", new { area = "CoreModules", controller = "systemsetting" })
+            </li>
+            <li class="level1">
+                @Html.ActionLinkSpan("Giao diện", "Index", new { area = "CoreModules", controller = "theme" })
+            </li>
+            <li class="level1">
+                @Html.ActionLinkSpan("Log lỗi hệ thống", "Index", new { area = "CoreModules", controller = "elmahlog" }, new { target = "_blank" })
+            </li>
+            <li class="parent level1" @menuEffect>
+                <a href="#" onclick="return false;"><span>Phân quyền</span></a>
+                <ul>
+                    <li class="level2">@Html.ActionLinkSpan("Tài khoản hệ thống", "Index", new { area = "CoreModules", controller = "user" })</li>
+                    <li class="level2">@Html.ActionLinkSpan("Vai trò", "Index", new { area = "CoreModules", controller = "authorization" })</li>
+                </ul>
+            </li>            
+        </ul>
+    </li>
+</ul>
+
+<script type="text/javascript">
+    $(document).ready(function () { 
+        var currentMenu = "@currentMenu";
+        $("#nav-li-" + currentMenu).addClass("active");
+    });
+</script>

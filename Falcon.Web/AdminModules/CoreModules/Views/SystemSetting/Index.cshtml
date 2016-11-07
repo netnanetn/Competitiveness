@@ -1,0 +1,59 @@
+﻿@model IEnumerable<SystemSetting>
+       
+@{
+    Func<Nullable<int>, string> getType = type => {
+        switch (type)
+        {
+            case 1:
+                return "text";
+            case 2:
+                return "textarea";
+            case 3:
+                return "checkbox";
+            case 4:
+                return "radio";
+            case 5:
+                return "select";
+            case 6:
+                return "html";
+            default :
+                return "text";
+        }
+    }; 
+}
+
+@using (Html.BeginForm()){
+    @Html.Partial("_Toolbar")
+        
+    @(Html.Telerik().Grid(Model)
+        .Name("PageList")        
+        .Columns(columns =>
+        {            
+            columns.Template(
+                @<text> 
+                    @Html.ActionLink(item.SettingKey, "EditValue", new { key = item.SettingKey })
+                </text>
+            ).Title("Key");
+            columns.Bound(o => o.Title).Title("Tiêu đề");
+            columns.Bound(o => o.Description).Title("Mô tả");
+            columns.Bound(o => o.Value).Title("Giá trị").Width(300);
+              columns.Template(
+                @<text>
+                    @getType(item.Type)
+                </text>
+            ).Title("Kiểu");
+              columns.Template(
+                  @<text>                     
+                     @Html.ActionLink("Sửa thiết lập", "Edit", new { key = item.SettingKey })  
+                    |
+                    @Html.ActionLink("Xóa", "Delete", new { key = item.SettingKey }, new { onclick = "return deleteConfirm('Bạn có  chắc chắn muốn xóa Setting này không?', '" + @Url.Action("Delete", new { key = item.SettingKey }) + "')" })                    
+                </text>).Title("Thao tác");
+        })
+        .Scrollable(scrolling => scrolling.Enabled(false))
+        .Sortable(sorting => sorting.Enabled(false))
+        .Pageable(paging => paging.Enabled(true).PageSize(100))
+        .Filterable(filtering => filtering.Enabled(false))
+        .Groupable(grouping => grouping.Enabled(false))
+        .Footer(true)
+        )
+}

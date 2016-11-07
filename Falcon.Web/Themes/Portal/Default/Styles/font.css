@@ -1,0 +1,100 @@
+/*@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Open Sans Light'), local('OpenSans-Light'), url(/Content/Font/DXI1ORHCpsQm3Vp6mXoaTXwUvq1pQaUIDqPgpae5ItU.woff) format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans'), local('OpenSans'), url(/Content/Font/59ZRklaO5bWGqF5A9baEET8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Open Sans Semibold'), local('OpenSans-Semibold'), url(/Content/Font/MTP_ySUJH_bn48VBG8sNSnwUvq1pQaUIDqPgpae5ItU.woff) format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Open Sans Bold'), local('OpenSans-Bold'), url(/Content/Font/k3k702ZOKiLJc3WVjuplzHwUvq1pQaUIDqPgpae5ItU.woff) format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 800;
+  src: local('Open Sans Extrabold'), local('OpenSans-Extrabold'), url(/Content/Font/EInbV5DfGHOiMmvb1Xr-hnwUvq1pQaUIDqPgpae5ItU.woff) format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 300;
+  src: local('Open Sans Light Italic'), local('OpenSansLight-Italic'), url(/Content/Font/PRmiXeptR36kaC0GEAetxsJIfR0j-Hc3mXsqdoe9vx8.woff) format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Open Sans Italic'), local('OpenSans-Italic'), url(/Content/Font/xjAJXh38I15wypJXxuGMBkbnXQ06sCSpaytluCdpFnY.woff) format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 600;
+  src: local('Open Sans Semibold Italic'), local('OpenSans-SemiboldItalic'), url(/Content/Font/PRmiXeptR36kaC0GEAetxrkV11xRSeRSsXvODowCrgc.woff) format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 700;
+  src: local('Open Sans Bold Italic'), local('OpenSans-BoldItalic'), url(/Content/Font/PRmiXeptR36kaC0GEAetxttxB2icnUq6NyCcJOfFtRI.woff) format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 800;
+  src: local('Open Sans Extrabold Italic'), local('OpenSans-ExtraboldItalic'), url(/Content/Font/PRmiXeptR36kaC0GEAetxq6EGkuGQVtC-K3yp5dayWY.woff) format('woff');
+}*/
+
+@font-face {
+    font-family: 'AvantGarde';
+    src: local('AvantGarde') url(/Content/Font/14_3875_avantg.woff) format('woff');
+}
+
+@font-face {
+    font-family: 'AvantGarde-Demi';
+    src: local('AvantGarde-Demi') url(/Content/Font/14_3876_avantgd.woff) format('woff');
+}
+
+@-moz-font-face {
+    font-family: 'Catull';
+    src: url(/Themes/Portal/Default/Styles/Font/Catull.ttf);
+    font-weight: 400;
+}
+
+@-webkit-font-face {
+    font-family: 'Catull';
+    src: url(/Themes/Portal/Default/Styles/Font/Catull.ttf);
+    font-weight: 400;
+}
+
+@-o-font-face {
+    font-family: 'Catull';
+    src: url(/Themes/Portal/Default/Styles/Font/Catull.ttf);
+    font-weight: 400;
+}
+
+@-ms-font-face {
+    font-family: 'Catull';
+    src: url(/Themes/Portal/Default/Styles/Font/Catull.ttf);
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Catull';
+    src: url(/Themes/Portal/Default/Styles/Font/Catull.ttf);
+    font-weight: 400;
+}

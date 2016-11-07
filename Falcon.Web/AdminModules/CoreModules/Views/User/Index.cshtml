@@ -1,0 +1,33 @@
+﻿@using Falcon.Data.Domain
+
+@model IEnumerable<User>
+           
+@using (Html.BeginForm()){
+    @Html.Partial("_Toolbar")
+        
+    @(Html.Telerik().Grid(Model)
+        .Name("UserList")        
+        .Columns(columns =>
+        {                        
+            columns.Template(
+               @<text>
+               @Html.ActionLink(item.UserName, "Edit/" + item.Id)
+                </text>).Title("Tên đăng nhập");
+            columns.Bound(o => o.Email).Title("Email đăng nhập");
+            columns.Bound(o => o.FullName).Title("Tên người dùng");
+            columns.Bound(o => o.Created).Format("{0:dd/MM/yyyy}").Title("Ngày khởi tạo").Width(120);
+            columns.Bound(o => o.Modified).Format("{0:dd/MM/yyyy}").Title("Lần cập nhật").Width(120);            
+            columns.Template(
+                @<text>
+                    @Html.ActionLink("Đổi mật khẩu", "ChangePassword/" + item.Id)
+                    |
+                    @Html.ActionLink("Xóa", "Delete/" + item.Id, null, new { onclick = "return deleteConfirm('Bạn có chắc chắn muốn xóa người dùng này không?', '" + @Url.Action("Delete/" + item.Id + "')") })                    
+                </text>).Title("Thao tác");
+        })
+        .Footer(false)
+        )
+    
+     <div class="t-grid-pager-boder">
+        @Html.Pager((PaginationModels)ViewData["PagerModels"]).HasNextPage(true).HasPreviousPage(true).DisplayFormat(true).RenderAdmin()
+    </div>
+}

@@ -1,0 +1,109 @@
+﻿
+    <!-- PAGEBODY START -->
+
+    <div class="banner banner-view">
+        <!-- BANNER START -->
+        <p>
+            <a href="open.php">Tạo hỗ trợ mới</a>
+            <a href="view.php">Kiểm tra tình trạng yêu cầu </a>
+        </p>
+        <div class="search hidden-xs hidden-sm">
+            <input type="text" class="txtSearch" placeholder="Nhập câu hỏi hoặc chủ đề nếu bạn muốn tìm kiếm" name="q">
+            <button type="button" class="button btn-registration" onclick="quicksearch();">
+                <span>Tìm kiếm</span>
+            </button>
+        </div>
+        <div class="search-mobile hidden-md hidden-lg">
+            <div class="row">
+                <div class="col-sm-12 col-xs-12">
+                    <input type="text" class="txtSearch" placeholder="Nhập câu hỏi hoặc chủ đề nếu bạn muốn tìm kiếm" name="q">
+                </div>
+                <div class="col-sm-12 col-xs-12">
+                    <button type="button" class="button btn-registration " onclick="quicksearch();">
+                        <span>Tìm kiếm</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div> <!-- END BANNER -->
+
+
+
+    <div class="content">
+        <!-- CONTENT START -->
+        <div class="container">
+            <div class="box-group box-group-view">
+                <div class="row">
+                    <form action="login.php" method="post" id="clientLogin">
+                        <input type="hidden" name="__CSRFToken__" value="97d975695602bb15cbc05727abb50ef10f0a8fc1">            <div><strong></strong></div>
+                        <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
+                            <h2>Nhận link theo dõi yêu cầu hỗ trợ</h2>
+                            <p class="text-content-view">Xin vui lòng nhập vào địa chỉ email và mã số Ticket. Link truy cập sẽ được gửi về email của bạn.                </p>
+
+                            <div class="box-left">
+                                <div class="email">
+                                    <input class="input-text" type="text" name="lemail" size="45" placeholder="Địa chỉ email">
+                                </div>
+                                <div class="capcha">
+                                    <input class="input-text" type="text" name="lticket" size="45" placeholder="Mã yêu cầu. Ví dụ: 67895">
+                                </div>
+                                <button type="submit" class="button btn-registration">
+                                    <span class="event-Support-ticket-check">GỬI YÊU CẦU</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-sm-6  col-md-6 col-xs-12">
+                            <div class="row">
+                                <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
+                                    <div class="box-right">
+                                        <div class="box-small">
+                                            <div class="box-image">
+                                                <img src="~/Themes/Portal/Default/Images/icon_login.png" alt="" class="">
+                                                <p>Đăng nhập<span>Bạn đã có tài khoản?</span></p>
+                                            </div>
+                                            <div class="media-body">
+                                                <p>
+                                                    <a>Đăng nhập</a> để xem tất cả tình trạng các yêu cầu.
+                                                </p>
+
+                                                <button style="padding: 0 30px" type="button" class="button btn-registration fancybox">
+                                                    <span>ĐĂNG NHẬP</span>
+                                                </button>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
+                                    <div class="box-right">
+                                        <div class="box-small">
+                                            <div class="box-image">
+                                                <img src="~/Themes/Portal/Default/Images/icon_register.png" alt="" class="">
+                                                <p class="">Đăng ký<span>Bạn chưa có tài khoản?</span></p>
+                                            </div>
+                                            <div class="media-body">
+                                                <p style="padding-left: 4px;">
+                                                    <a>Đăng kí</a> ngay <a>tạo tài khoản mới</a> để theo dõi các yêu cầu thuận tiện nhất.
+                                                </p>
+                                                <button style="padding: 0 30px" type="button" class="button btn-registration " onclick="javascript: window.location.href = 'account.php?do=create';">
+                                                    <span>ĐĂNG KÝ</span>
+                                                </button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </form>
+
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>

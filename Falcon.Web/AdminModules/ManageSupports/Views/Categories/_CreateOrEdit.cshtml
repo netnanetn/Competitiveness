@@ -1,0 +1,63 @@
+﻿@model CategoryModel
+
+<table cellspacing="0" class="form-list">
+    
+    <tr>
+        <td class="label">@Html.LabelRequiredFor(model => model.Name)</td>
+        <td class="value">
+            @Html.TextBoxFor(model => model.Name, new { @class = "input-text" })
+
+            <br />@Html.ValidationMessageFor(model => model.Name)
+        </td>
+    </tr>
+       
+    <tr>
+        <td class="label">@Html.LabelRequiredFor(model => model.Alias)</td>
+        <td class="value">
+            @Html.TextBoxFor(model => model.Alias, new { @class = "input-text" })
+
+            <br />@Html.ValidationMessageFor(model => model.Alias)
+        </td>
+    </tr>  
+   
+
+    <tr>
+        <td class="label">@Html.LabelRequiredFor(model => model.Status)</td>
+        <td class="value">
+            @Html.CheckBoxFor(model => model.Status)
+            <br />@Html.ValidationMessageFor(model => model.Status)
+        </td>
+    </tr>
+
+    <tr>
+        <td class="label">@Html.LabelRequiredFor(model => model.Description)</td>
+        <td class="value">
+            @Html.TextAreaFor(model => model.Description, new { style = "width:400px;height:100px;" })
+            <br />@Html.ValidationMessageFor(model => model.Description)
+        </td>
+    </tr>
+    <tr>
+        <td class="label">@Html.LabelFor(model => model.ImagePath)</td>
+        <td class="value">
+            @Html.HiddenFor(model => model.ImagePath)
+        
+              @if (!string.IsNullOrEmpty(Model.ImagePath))
+              {
+                <img style="max-width: 200px;" id="img-path" src="@Url.Content(Model.ImagePath)" alt="" />
+              }
+              else
+              {
+                <img style="max-width: 200px;" id="img-path" src="@Url.Content("~/Content/default.gif")" alt="" />
+              }
+            
+            <div>
+                <input style="max-width: 200px;" type="file" name="datafile" accept="image/*"/>
+            </div>
+            @*@Html.TextBoxFor(model => model.ImagePath, new { @class = "input-text" })*@
+
+            <br />@Html.ValidationMessageFor(model => model.ImagePath)
+        </td>
+    </tr>
+    
+
+</table>

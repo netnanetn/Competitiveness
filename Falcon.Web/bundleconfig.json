@@ -1,0 +1,94 @@
+[
+  {
+    "outputFileName": "Themes/Portal/Default/Styles/dist/style.css",
+    "inputFiles": [
+      "Scripts/bootstrap/css/bootstrap.min.css",
+      "Content/font-awesome/css/font-awesome.min.css",
+      "Content/swiper/swiper.min.css",
+      "Content/fancybox/jquery.fancybox.css",
+      "Content/font-roboto/font-robotos.css",
+      "Themes/Portal/Default/Styles/new-main.css",
+      "Themes/Portal/Default/Styles/header.css",
+      "Themes/Portal/Default/Styles/footer.css",
+      "Themes/Portal/Default/Styles/bizweb-plus.css",
+      "Themes/Portal/Default/Styles/paging.css"
+    ]
+  },
+  {
+    "outputFileName": "Themes/Portal/Default/Styles/dist/script.js",
+    "inputFiles": [
+      "Scripts/jquery-1.10.2.min.js",
+      "Scripts/jquery.cookie.js",
+      "Scripts/bootstrap/js/bootstrap.min.js",
+      "Scripts/swiper/swiper.min.js",
+      "Scripts/jquery.validate.min.js",
+      "Scripts/jquery.validate.unobtrusive.min.js",
+      "Scripts/bootstrap-validation.js",
+      "Content/fancybox/jquery.fancybox.js"
+    ]
+  },
+  {
+    "outputFileName": "Themes/Portal/Default/Styles_New/js/dist/slider_toi_uu_seo.js",
+    "inputFiles": [ "Themes/Portal/Default/Styles_New/js/slider_toi_uu_seo.js" ],
+    "minify": {
+      "enabled": true,
+      "commentMode": "all"
+    }
+  },
+  {
+    "outputFileName": "Themes/Portal/Default/Styles_New/js/dist/toi-uu-website.js",
+    "inputFiles": [ "Themes/Portal/Default/Styles_New/js/toi-uu-website.js" ],
+    "minify": {
+      "enabled": true,
+      "commentMode": "all"
+    }
+  },
+  {
+    "outputFileName": "Themes/Portal/Default/Styles_New/js/dist/tiet-kiem.js",
+    "inputFiles": [ "Themes/Portal/Default/Styles_New/js/tiet-kiem.js" ],
+    "minify": {
+      "enabled": true,
+      "commentMode": "all"
+    }
+  },
+  {
+    "outputFileName": "Themes/Portal/Default/Styles_New/js/dist/ho-tro-marketing.js",
+    "inputFiles": [ "Themes/Portal/Default/Styles_New/js/ho-tro-marketing.js" ],
+    "minify": {
+      "enabled": true,
+      "commentMode": "all"
+    }
+  },
+  {
+    "outputFileName": "Themes/Portal/Default/Styles_New/js/dist/giao-dien.js",
+    "inputFiles": [ "Themes/Portal/Default/Styles_New/js/giao-dien.js" ],
+    "minify": {
+      "enabled": true,
+      "commentMode": "all"
+    }
+  },
+  {
+    "outputFileName": "Themes/Portal/Default/Styles_New/js/dist/ket-noi-fb.js",
+    "inputFiles": [ "Themes/Portal/Default/Styles_New/js/ket-noi-fb.js" ],
+    "minify": {
+      "enabled": true,
+      "commentMode": "all"
+    }
+  },
+  {
+    "outputFileName": "Themes/Portal/Default/Styles_New/js/dist/tao-ws-ban-hang.js",
+    "inputFiles": [ "Themes/Portal/Default/Styles_New/js/tao-ws-ban-hang.js" ],
+    "minify": {
+      "enabled": true,
+      "commentMode": "all"
+    }
+  },
+  {
+    "outputFileName": "Themes/Portal/Default/Styles_New/js/dist/sale_channel.js",
+    "inputFiles": [ "Themes/Portal/Default/Styles_New/js/sale_channel.js" ],
+    "minify": {
+      "enabled": true,
+      "commentMode": "all"
+    }
+  }
+]

@@ -1,0 +1,18 @@
+﻿<h1 style="float:left;padding-left:20px;"><a href="/admin" style="text-decoration:none;">Quản trị hệ thống</a></h1>
+<div class="header-right">
+<p class="super">
+    Xin chào @User.Identity.Name <span class="separator">| </span>@DateTime.Now<span
+        class="separator">|</span> @Html.ActionLink("Đăng xuất", "Logout", new { area = "Users", controller = "Users" }, new { @class = "link-logout" })
+</p>
+<fieldset>
+    <legend>Tìm kiếm</legend><span style="display: none" class="autocomplete-indicator"
+        id="global_search_indicator">
+        @Img("ajax-loader.gif", new { @class="v-middle", alt="Loading..."})
+    </span>
+    <input type="text" onblur="if(this.value=='')this.value='Tìm kiếm chung';"
+        onfocus="if(this.value=='Tìm kiếm chung')this.value=''; " value="Tìm kiếm chung"
+        class="input-text" name="query" id="global_search" autocomplete="off">
+    <div class="autocomplete" id="global_search_autocomplete" style="display: none;">
+    </div>
+</fieldset>
+</div>

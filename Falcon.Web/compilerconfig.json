@@ -1,0 +1,42 @@
+﻿[
+  {
+    "outputFile": "Themes/Portal/Default/Styles_New/css/dist/default.css",
+    "inputFile": "Themes/Portal/Default/Styles_New/css/Pages/default.scss"
+  },
+  {
+    "outputFile": "Themes/Portal/Default/Styles_New/css/dist/tiet-kiem.css",
+    "inputFile": "Themes/Portal/Default/Styles_New/css/Pages/tiet-kiem.scss"
+  },
+  {
+    "outputFile": "Themes/Portal/Default/Styles_New/css/dist/toi-uu-seo.css",
+    "inputFile": "Themes/Portal/Default/Styles_New/css/Pages/toi-uu-seo.scss"
+  },
+  {
+    "outputFile": "Themes/Portal/Default/Styles_New/css/dist/stability.css",
+    "inputFile": "Themes/Portal/Default/Styles_New/css/Pages/stability.scss"
+  },
+  {
+    "outputFile": "Themes/Portal/Default/Styles_New/css/dist/sale_channel.css",
+    "inputFile": "Themes/Portal/Default/Styles_New/css/Pages/sale_channel.scss"
+  },
+  {
+    "outputFile": "Themes/Portal/Default/Styles_New/css/dist/toi-uu-website.css",
+    "inputFile": "Themes/Portal/Default/Styles_New/css/Pages/toi-uu-website.scss"
+  },
+  {
+    "outputFile": "Themes/Portal/Default/Styles_New/css/dist/ho-tro-marketing.css",
+    "inputFile": "Themes/Portal/Default/Styles_New/css/Pages/ho-tro-marketing.scss"
+  },
+  {
+    "outputFile": "Themes/Portal/Default/Styles_New/css/dist/giao-dien.css",
+    "inputFile": "Themes/Portal/Default/Styles_New/css/Pages/giao-dien.scss"
+  },
+  {
+    "outputFile": "Themes/Portal/Default/Styles_New/css/dist/ket-noi-fb.css",
+    "inputFile": "Themes/Portal/Default/Styles_New/css/Pages/ket-noi-fb.scss"
+  },
+  {
+    "outputFile": "Themes/Portal/Default/Styles_New/css/dist/tao-ws-ban-hang.css",
+    "inputFile": "Themes/Portal/Default/Styles_New/css/Pages/tao-ws-ban-hang.scss"
+  }
+]

@@ -1,0 +1,413 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta name="google-site-verification" content="JicnhwVZUx-kj0-S5ZZkFx3zS-VRMkpZ8k17dEfn8bI" />
+    @SetMeta("description", ViewBag.MetaDescription)
+    @SetMeta("keyword", ViewBag.MetaKeyword)
+    @if (ViewBag.CanonicalLink != null)
+    {
+        <link rel="canonical" href="@ViewBag.CanonicalLink" />
+    }
+    @{
+        var css = ViewData["CSS"].ToString();
+    }
+    <link rel="shortcut icon" href="/Themes/Portal/Default/Images/favicon.ico?v1" type="image/x-icon" />
+
+    <link href="~/Themes/Portal/Default/Styles_New/css/dist/@(css).min.css?v=105" rel="stylesheet" />
+    <link href="~/Content/css/Style.css" rel="stylesheet" />
+    <script src="~/Themes/Portal/Default/Scripts/jquery-3.1.1.js"></script>
+    <script src="~/Themes/Portal/Default/Scripts/swiper.min.js"></script>
+    <script src="/Themes/Portal/Default/Scripts/bootstrap.min.js"></script>
+    <link href="~/Content/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+
+
+    @*<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>*@
+
+    <!--fancybox-->
+    @*<script src="~/Content/Js/fancybox-2/jquery.fancybox.pack.js"></script>*@
+    <link href="~/Content/Js/fancybox-2/jquery.fancybox.css" rel="stylesheet" />
+    <script src="~/Content/Js/fancybox-2/jquery.fancybox.js"></script>
+    <!--redactor-->
+    <script src="~/Content/Redactor/source.js"></script>
+    <link rel="stylesheet" href="~/Content/Redactor/redactor.css" />
+    <link rel="stylesheet" href="~/Content/Redactor/StyleCss.css" />
+    <script src="~/Content/Redactor/redactor.js"></script>
+    <link rel="stylesheet" href="~/Content/Redactor/filedrop.css" />
+    <script src="~/Content/Redactor/filedrop.field.js"></script>
+
+    <!--dropzone-->
+     <link href="~/Scripts/dropzone/basic.css" rel="stylesheet" />
+    <script src="~/Scripts/dropzone/dropzone.js"></script>
+    <link href="~/Scripts/dropzone/dropzone.css" rel="stylesheet" />
+
+    <style type="text/css">
+        #popup-login {
+            background-color: #f3f3f3;
+            border-radius: 15px;
+            float: none;
+            font-family: roboto-light !important;
+            margin: 0 auto;
+            padding: 0 50px;
+        }
+
+            #popup-login .tit-login {
+                font-size: 30px;
+                padding: 30px 0 5px;
+                margin-left: 15px;
+                text-transform: uppercase;
+            }
+
+            #popup-login input.input-text {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+
+            #popup-login button {
+                font-family: roboto-light;
+                text-transform: uppercase;
+            }
+
+            #popup-login .box-right {
+                border: 1px solid #cfcfcf;
+                border-radius: 15px;
+            }
+
+                #popup-login .box-right .box-small .box-image p {
+                    height: 51px;
+                    line-height: 61px;
+                    padding-right: 12px;
+                }
+
+                #popup-login .box-right .box-small {
+                    margin: 20px 0 10px;
+                }
+
+                #popup-login .box-right .text-content-register-right {
+                    font-size: 14px;
+                    margin-left: 20px;
+                }
+    </style>
+
+
+
+    <script type="text/javascript">
+        $(document).ready(
+            function () {
+                $('#redactor').redactor();
+            }
+        );
+    </script>
+
+</head>
+<body>
+    <div id="container">
+        @Html.Partial(ThemeViewPath + "Include/Header.cshtml")
+        <div id="wrapper">
+            <div class="hotro-pagebody register-pagebody ktttht-pagebody login-pagebody  home-pagebody" id="id_hotro_content">
+                @RenderBody()
+            </div>
+        </div>
+        @Html.Partial(ThemeViewPath + "Include/Footer.cshtml")
+    </div>
+
+    <div id="fancybox-popup-form" style="display: none;">
+
+        <div class="" id="popup-login">
+            <div class="box-group" style="margin: 0 auto;float: none">
+                <div class="row">
+                    <!--<form action="/login.php" method="post" id="clientLoginPopup" >-->
+                    <div class="tit-login">Đăng nhập</div>
+                    <div id="error_login" class="alert alert-danger" style="display: none">
+                        <strong id="error-mgs"></strong>
+                        Bạn sẽ được chuyển hướng sang trang login sau <span id="lblCount"></span>
+                    </div>
+                    <div class="col-sm-8 col-xs-12">
+
+                        <div class="box-left">
+                            <div class="acc">
+                                <input placeholder="Email hoặc Username" class="input-text" type="text" name="username" id="username" size="45" />
+                            </div>
+                            <div class="pass">
+                                <input placeholder="Mật khẩu" class="input-text" type="password" name="lpasswd" id="password" size="45" />
+                            </div>
+                            <div class="pwdreset">
+                                <div class="row">
+                                    <div class="col-sm-6 col-xs-12">
+                                        <div class="pwdreset-l">
+                                            <input type="checkbox" name="setcookie" value="setcookie" /><label>Ghi nhớ?</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-xs-12">
+                                        <div class="pwdreset-r">
+                                            <a href="pwreset.php">Quên mật khẩu</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="button btn-registration register-js">
+                                <span class="">Đăng Nhập</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 col-xs-12">
+                        <div class="box-right ">
+                            <div class="box-small">
+                                <div class="box-image">
+                                    <p>Đăng ký</p>
+                                    <img src="~/Themes/Portal/Default/Images/icon_register.png" alt="" width="40" height="51" />
+                                </div>
+                                <div class="text-content-register-right">
+                                    Bạn chưa có tài khoản?<span><a href="/Register.html">Tạo tài khoản mới</a></span>
+                                </div>
+                                <div class="text-content-register-right">
+                                    Tôi là một nhân viên <span><a href="/scp/"> Đăng nhập tại đây</a></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--</form>-->
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $('.register-js').unbind("click");
+                $('.register-js').click(function () {
+                    $.ajax({
+                        url: 'Home/Register',
+                        type: 'POST',
+                        data: {
+                            'username': $("#username").val(),
+                            'password': $("#password").val()
+                        }, // An object with the key 'submit' and value 'true;
+                        success: function (result) {
+                            console.log('ok');
+                            var err = $(result).find('#msg_error').text();
+                            console.log(err);
+                            if (err != "") {
+                                $('#error-mgs').append($(result).find('#msg_error').text());
+                                $('#error_login').show();
+                                var seconds = 5;
+                                var lblCount = document.getElementById("lblCount");
+                                lblCount.innerHTML = seconds;
+                                setInterval(function () {
+                                    seconds--;
+                                    lblCount.innerHTML = seconds;
+                                    if (seconds == 0) {
+                                        window.location.href = "login.php";
+                                    }
+                                }, 1000);
+
+                            }
+                            else {
+
+                                window.location.href = "tickets.php";
+                            }
+
+                        }
+
+                    });
+                    return false;
+                });
+
+            });
+        </script>
+
+    </div>
+
+    <div id="registration" class="registration-frame" style="display: none;">
+        <iframe id="iFrameRegistration" width="100%" height="700" scrolling="no" frameborder="0" style="border: none;" src="http://store.bizwebvietnam.net/admin/createstore/quickregister?source=bizweb_home"></iframe>
+    </div>
+
+
+
+    <script type="text/javascript">
+        var LAST_STORE_COOKIE_NAME = "last_store"
+
+        $(function () {
+            var lastStore = getCookie(LAST_STORE_COOKIE_NAME);
+            if (lastStore !== null && lastStore !== "") {
+                $(".subdomain").removeClass("hide");
+                $("#login-form input[name=Subdomain]").val(lastStore);
+                $("#login-form input[name=Subdomain]").attr("aria-required", "true");
+                $("#login-form input[name=Subdomain]").attr("data-val-required", "Nhập vào đường dẫn website");
+                $("#login-form").removeData("validator");
+                $("#login-form").removeData("unobtrusiveValidation");
+                $.validator.unobtrusive.parse($("#login-form"));
+            }
+        });
+
+        $(document).ready(function () {
+            $("input[name=StoreName]").blur(function () {
+                $("input[name=StoreAlias]").val(generateAlias($("input[name=StoreName]").val()));
+            });
+
+            var createStore = getParameterByName("createStore");
+            if (createStore) {
+                var storeName = getParameterByName("storeName");
+
+                openCreateStorePopup(document, storeName);
+            }
+        });
+
+        var mobile = false;
+        $(window).resize(function () {
+            var ww = $(window).width();
+            if (ww > 855) {
+                mobile = false;
+                $('.fancybox-item.fancybox-close').addClass('fancybox-close-reg-web');
+            }
+            else {
+                mobile = true;
+                $('.fancybox-item.fancybox-close').removeClass('fancybox-close-reg-web');
+            }
+        })
+        $(window).trigger('resize');
+
+        function getParameterByName(name) {
+            name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+            var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+                results = regex.exec(location.search);
+            return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+        }
+
+        function onInputStoreName(e, element) {
+            if (e.keyCode == 13) {
+                openCreateStorePopup(element);
+                return false;
+            }
+        }
+
+        function openCreateStorePopup(e, storeName) {
+            var iframeSrc = 'http://store.bizwebvietnam.net/admin/createstore/quickregister?source=bizweb_home';
+
+            if (!storeName)
+                storeName = $(e).closest(".quick-registration").find(".input-site-name").val();
+
+            if (storeName != null && storeName != "") {
+                iframeSrc = setParameter(iframeSrc, "storeName", storeName);
+                iframeSrc = setParameter(iframeSrc, "storeAlias", generateAlias(storeName));
+            }
+
+            var kd = getParameterByName("kd");
+            if (kd !== null && kd !== "")
+                setCookie("kd", kd, 30);
+
+            kd = getCookie("kd");
+            if (kd !== null && kd !== "")
+                iframeSrc = setParameter(iframeSrc, "kd", kd);
+
+            var ref = getParameterByName("ref");
+            if (ref !== null && ref !== "")
+                setCookie("ref", ref, 30);
+
+            ref = getCookie("ref");
+            if (ref !== null && ref !== "")
+                iframeSrc = setParameter(iframeSrc, "ref", ref);
+
+            $('#registration iframe').attr('src', iframeSrc);
+
+            $.fancybox({
+                fitToView: false,
+                closeClick: false,
+                openEffect: 'fade',
+                closeEffect: 'fade',
+                href: "#registration",
+                width: "100%",
+                maxWidth: 847,
+                autoSize: false,
+                autoHeight: true,
+                beforeShow: function () {
+                    $(".fancybox-skin").css("backgroundColor", "transparent");
+                },
+                margin: [20, 0, 20, 0],
+                'afterShow': function () {
+                    $('.fancybox-item.fancybox-close').addClass('fancybox-close-reg');
+                    if (mobile == false) {
+                        $('.fancybox-item.fancybox-close').addClass('fancybox-close-reg-web');
+                    }
+                },
+                'afterClose': function () {
+                    $('.fancybox-item.fancybox-close').removeClass('fancybox-close-reg');
+                    $('.fancybox-item.fancybox-close').removeClass('fancybox-close-reg-web');
+                }
+            });
+
+        }
+
+        function generateAlias(text) {
+            text = text.toLowerCase();
+            text = text.replace(/à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ/g, "a");
+            text = text.replace(/è|é|ẹ|ẻ|ẽ|ê|ề|ế|ệ|ể|ễ/g, "e");
+            text = text.replace(/ì|í|ị|ỉ|ĩ/g, "i");
+            text = text.replace(/ò|ó|ọ|ỏ|õ|ô|ồ|ố|ộ|ổ|ỗ|ơ|ờ|ớ|ợ|ở|ỡ/g, "o");
+            text = text.replace(/ù|ú|ụ|ủ|ũ|ư|ừ|ứ|ự|ử|ữ/g, "u");
+            text = text.replace(/ỳ|ý|ỵ|ỷ|ỹ/g, "y");
+            text = text.replace(/đ/g, "d");
+            text = text.replace(/'|\"|\(|\)|\[|\]/g, "");
+            text = text.replace(/\W+/g, "-");
+            if (text.slice(-1) === "-")
+                text = text.replace(/-+$/, "");
+
+            if (text.slice(0, 1) === "-")
+                text = text.replace(/^-+/, "");
+
+            return text;
+        }
+
+
+        function getCookie(cname) {
+            var name = cname + "=";
+            var ca = document.cookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') c = c.substring(1);
+                if (c.indexOf(name) != -1) return c.substring(name.length, c.length);
+            }
+            return "";
+        }
+        function setCookie(cname, cvalue, exdays) {
+            if (!exdays)
+                exdays = 30;
+
+            var d = new Date();
+            d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+            var expires = "expires=" + d.toGMTString();
+            document.cookie = cname + "=" + cvalue + "; " + expires + ";domain=.bizweb.vn;path=/";
+        }
+
+        function setParameter(url, paramName, paramValue) {
+            if (url.indexOf(paramName + "=") >= 0) {
+                var prefix = url.substring(0, url.indexOf(paramName));
+                var suffix = url.substring(url.indexOf(paramName));
+                suffix = suffix.substring(suffix.indexOf("=") + 1);
+                suffix = (suffix.indexOf("&") >= 0) ? suffix.substring(suffix.indexOf("&")) : "";
+                url = prefix + paramName + "=" + paramValue + suffix;
+            }
+            else {
+                if (url.indexOf("?") < 0)
+                    url += "?" + paramName + "=" + paramValue;
+                else
+                    url += "&" + paramName + "=" + paramValue;
+            }
+
+            return url;
+        }
+    </script>
+    <script>
+        $(".textbox-input-5 > .input-text").prop('required', true);
+        $(".textbox-input-1 > .input-text").prop('required', true);
+        $(".textbox-input-2 > .input-text").prop('required', true);
+        $(".textbox-input-5").append('<font class=\"error\">*</font>');
+        //$(".textbox-2 > .textbox-input").prop('placeholder', 'Họ và tên');
+    </script>
+
+
+
+
+</body>
+</html>

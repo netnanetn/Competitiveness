@@ -1,0 +1,12 @@
+﻿<div style="float:right;padding-right:10px;">
+@if (WorkContext.CurrentAccount == null)
+{ 
+    @Html.ActionLink("Đăng nhập", "Login", new { area = "Accounts", controller = "Accounts" }, new { id = "lnkLogin" }) <text> | </text>
+    @Html.ActionLink("Đăng ký", "Register", new { area = "Accounts", controller = "Accounts" })
+    @Html.Partial("/Themes/Portal/Shared/Views/Include/PopupLogin.cshtml")
+}
+else
+{ 
+    <span>Xin chào @Html.ActionLink(WorkContext.CurrentAccount.FullName, "Index", new { area = "Accounts", controller = "Profile" }), @Html.ActionLink("Đăng xuất", "Logout", new { area = "Accounts", controller = "Accounts" })</span>
+}
+</div>

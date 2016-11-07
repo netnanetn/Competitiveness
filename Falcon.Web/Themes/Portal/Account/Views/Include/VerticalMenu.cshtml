@@ -1,0 +1,43 @@
+﻿@using Falcon.Mvc
+@{    
+    string area = MvcHelpers.GetAreaName(ViewContext.RouteData);
+    string currentMenu = "Account";
+    switch (area)
+    {
+        case "Accounts":
+            currentMenu = "Account";
+            break;
+        case "RaoVat":
+            currentMenu = "RaoVat";
+            break;
+    }
+}
+@switch (currentMenu)
+{
+    case "Account":
+        <div class="main_header"><div class="view_down"><span></span></div><span>Quản lý tài khoản</span></div>
+        <div class="list_item">
+            <ul>
+                <li>@Html.ActionLink("Chỉnh sửa thông tin", "Index", new { area = "Accounts", controller = "Profile" }, new { @class="l_i_edit"})</li>
+                <li>@Html.ActionLink("Thay đổi mật khẩu", "ChangePassword", new { area = "Accounts", controller = "Profile" }, new { @class = "l_i_pass" })</li>
+                <li>@Html.ActionLink("Thay đổi Email", "ChangeEmail", new { area = "Accounts", controller = "Profile" }, new { @class = "l_i_email" })</li>
+            </ul>
+        </div>
+           break;
+    case "RaoVat":
+        <div class="main_header"><div class="view_down"><span></span></div><span>Quản lý rao vặt</span></div>
+        <div class="list_item">
+            <ul>
+                <li>@Html.ActionLink("Đăng tin rao vặt", "SelectCategory", new {area = "RaoVat", controller = "ManageAds"})</li>
+                <li>@Html.ActionLink("Danh sách tin", "Index", new { area = "RaoVat", controller = "ManageAds" }, new { @class = "l_i_listnews" })</li>
+                <li>@Html.ActionLink("Tin nháp", "Draft", new { area = "RaoVat", controller = "ManageAds" }, new { @class = "l_i_draft" })</li>
+                <li>@Html.ActionLink("Rao vặt VIP", "VIP", new { area = "RaoVat", controller = "ManageAds" }, new { @class = "l_i_vip" })</li>
+                <li>@Html.ActionLink("Rao vặt hết hạn", "Expire", new { area = "RaoVat", controller = "ManageAds" }, new { @class = "l_i_expire" })</li>
+                <li>@Html.ActionLink("Rao vặt chờ duyệt", "Pending", new { area = "RaoVat", controller = "ManageAds" }, new { @class = "l_i_pending" })</li>
+                <li>@Html.ActionLink("Khách hàng phản hồi", "Index", new { area = "RaoVat", controller = "ManageComments" }, new { @class = "l_i_fb" })</li>
+            </ul>
+        </div>
+        break;
+    default:
+        break;
+}

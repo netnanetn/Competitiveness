@@ -1,0 +1,59 @@
+﻿<div id="header" class="header">
+    <!-- HEADER START -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-5 col-xs-6">
+                <div class="logo-container">
+                    <a class="logo" href="index.php">
+
+                        <img class="hidden-xs" src="~/Themes/Portal/Default/Images/logo.png" title="logo">
+                        <img class="hidden-sm hidden-md hidden-lg visible-xs" src="~/Themes/Portal/Default/Images/bizweb-logo.png" title="logo">
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-9 col-md-9 col-sm-7 col-xs-6">
+                <div class="nav">
+                    <ul class="hidden-xs hidden-sm">
+                        <li><a class="document" href="https://docs.bizweb.vn" target="_blank" rel="nofollow">Tài liệu</a></li>
+                        <li><a class="help" href="https://docs.bizweb.vn/help.html" target="_blank" rel="nofollow">Trợ giúp</a></li>
+                        <li><a class="themestore" href="https://themes.bizweb.vn/" target="_blank" rel="nofollow">Kho giao diện</a></li>
+                        <li><a class="applicationstore" href="https://apps.bizweb.vn/" target="_blank" rel="nofollow">Kho ứng dụng</a></li>
+                        <li><a class="expert" href="https://experts.bizweb.vn/" target="_blank" rel="nofollow">Chuyên gia</a></li>
+                        <li><a class="login fancybox" href="#fancybox-popup-form">Đăng nhập</a></li>
+                    </ul>
+                    <button type="button" class="button btn-registration" onclick="openCreateStorePopup(this);">
+                        <span>Tạo website</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('.fancybox').click(function () {
+            openPopupLogin();
+        });
+        /**
+         * Comment
+         */
+        function openPopupLogin()
+        {
+// note the use of "this" rather than a function argument
+            $.fancybox([
+                {href: '#fancybox-popup-form'}
+            ], {
+                maxWidth: 750,
+                minHeight: 300,
+                fitToView: false,
+                width: '100%',
+                height: '100%',
+                autoSize: false,
+                scrolling: false,
+                closeBtn: false,
+                openEffect: 'none',
+                closeEffect: 'none'
+            });
+        }
+    });
+</script>

@@ -1,0 +1,20 @@
+﻿@{    
+    string area = Falcon.Mvc.MvcHelpers.GetAreaName(ViewContext.RouteData);
+    string Menu = "";
+    
+    switch (area)
+    {
+       
+        case "Accounts":
+            Menu = "<a href='/tai-khoan'>Tài khoản</a>";
+            break;
+        case "raovat":
+            Menu = "<a href='/raovat'>Rao vặt</a>";
+            break;
+    }
+}
+<div class="sitemap_wrap">
+    <a href="/">Trang quản trị</a>
+    @Html.Raw(Menu)
+    <a href="">@ViewData["ToolbarTitle"]</a>
+</div>

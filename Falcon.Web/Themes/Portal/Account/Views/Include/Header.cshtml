@@ -1,0 +1,66 @@
+﻿<div class="divHeader">
+    <div class="logo">
+        <a href="/raovat">@Img("Logo.png")</a>
+    </div>
+    <div class="frmSearch">
+            <div class="wrap_search">
+            <div class="tab_search">
+                <ul>
+                    @*<li class="selected"><a href="#">Sản phẩm</a></li>*@
+                    <li class="selected"><a  href="/raovat">Rao vặt</a></li>
+                    @*<li><a href="#">Gian hàng</a></li>*@
+                    @*<li><a href="#">Tin tức</a></li>*@
+                </ul>
+            </div>
+            <div class="bg_search">
+                @using (Html.BeginForm("Index", "Search", FormMethod.Get))
+                {                     
+                    <input type="text" id="txtSearchKey" name="Keyword" value="@Request.QueryString["Keyword"]" onblur="SearchOnBlur(this)" onfocus="SearchOnFocus(this)" class="search_input" />
+                    <input type="submit" id="btnSearch" class="search_button" />                
+                }                
+            </div>
+        </div>
+
+        <script type="text/javascript">
+            $('.tab_search ul li').click(function () {
+                $('.tab_search ul li').removeClass("selected");
+                $(this).addClass("selected");
+            });
+
+            function g(x) {
+                return document.getElementById(x);
+            }
+            function CheckSearch() {
+                var keySearch = g("txtSearchKey");
+
+                if (Trim(keySearch.value) == '' || keySearch.value == 'Tìm kiếm') {
+                    alert("Mời bạn nhập từ khóa cần tìm kiếm");
+                    keySearch.focus();
+                    return false;
+                }
+                if (Trim(keySearch.value).length < 3) {
+                    alert("Bạn phải nhập tối thiểu 3 ký tự");
+                    keySearch.focus();
+                    return false;
+                }
+                return true;
+            }
+
+            function Trim(iStr) {
+                while (iStr.charCodeAt(0) <= 32) {
+                    iStr = iStr.substr(1);
+                }
+                while (iStr.charCodeAt(iStr.length - 1) <= 32) {
+                    iStr = iStr.substr(0, iStr.length - 1);
+                }
+                return iStr;
+            }
+            function SearchOnFocus(field) {
+                if (field.value == 'Tìm kiếm') { field.value = ''; }
+            }
+            function SearchOnBlur(field) {
+                if (field.value == '') { field.value = 'Tìm kiếm'; }
+            }
+        </script>         
+    </div>
+</div>

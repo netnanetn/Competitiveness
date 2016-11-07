@@ -1,0 +1,54 @@
+﻿@{
+    string currentArea = Falcon.Mvc.MvcHelpers.GetAreaName(ViewContext.RouteData);
+    string currentController = Falcon.Mvc.MvcHelpers.GetControllerName(ViewContext.RouteData);
+    string currentAction = Falcon.Mvc.MvcHelpers.GetActionName(ViewContext.RouteData);
+    Func<string, string, string, string> getCurrentTabMenu = delegate(string action, string area, string controller)
+    {
+        if (currentArea.Equals(area) && currentController.Equals(controller) && currentAction.Equals(action))
+        {
+            return "current";
+        }
+        else
+        {
+            return "";
+        }
+
+    };
+}
+@if (currentArea.Equals("StoreFavorites") && currentController.Contains("Favorite"))
+{
+    <div class="menu_list">
+        <ul>
+            <li class="@getCurrentTabMenu("Index", "StoreFavorites", "ManageProductFavorite")">@Html.ActionLink("Sản phẩm quan tâm", "Index", new { area = "StoreFavorites", controller = "ManageProductFavorite" }, new { @class = "st1" })</li>
+            <li class="sparator">&nbsp;</li>
+            <li class="@getCurrentTabMenu("Index", "StoreFavorites", "ManageRVAdFavorite")">@Html.ActionLink("Tin rao vặt quan tâm", "Index", new { area = "StoreFavorites", controller = "ManageRVAdFavorite" }, new { @class = "st2" })</li>
+            <li class="sparator">&nbsp;</li>
+            <li class="@getCurrentTabMenu("Index", "StoreFavorites", "ManageStoreFavorite")">@Html.ActionLink("Gian hàng quan tâm", "Index", new { area = "StoreFavorites", controller = "ManageStoreFavorite" }, new { @class = "st3" })</li>
+        </ul>
+    </div>
+}
+@if (currentArea.Equals("StoreFavorites") && currentController.Contains("History"))
+{
+    <div class="menu_list">
+        <ul>
+            <li class="@getCurrentTabMenu("Index", "StoreFavorites", "ManageProductHistory")">@Html.ActionLink("Sản phẩm đã xem", "Index", new { area = "StoreFavorites", controller = "ManageProductHistory" }, new { @class = "st1" })</li>
+            <li class="sparator">&nbsp;</li>
+            <li class="@getCurrentTabMenu("Index", "StoreFavorites", "ManageRVAdHistory")">@Html.ActionLink("Tin rao vặt đã xem", "Index", new { area = "StoreFavorites", controller = "ManageRVAdHistory" }, new { @class = "st2" })</li>
+            <li class="sparator">&nbsp;</li>
+            <li class="@getCurrentTabMenu("Index", "StoreFavorites", "ManageStoreHistory")">@Html.ActionLink("Gian hàng đã xem", "Index", new { area = "StoreFavorites", controller = "ManageStoreHistory" }, new { @class = "st3" })</li>
+        </ul>
+    </div>
+}
+@if (currentArea.Equals("StorePolicies") || currentArea.Equals("StorePayments") || currentArea.Equals("StoreShippings"))
+{ 
+    <div class="menu_list">
+        <ul>
+            <li class="@getCurrentTabMenu("Index", "StorePolicies", "ManagePolicy")"><a class="st1" href="@Url.Action("Index", new { area = "StorePolicies", controller = "ManagePolicy" })">
+                Chính sách gian hàng</a> </li>
+            <li class="@getCurrentTabMenu("Index", "StorePayments", "ManagePayment")"><a class="st2" href="@Url.Action("Index", new { area = "StorePayments", controller = "ManagePayment" })">
+                Hình thức thanh toán</a></li>
+            <li class="@getCurrentTabMenu("Index", "StoreShippings", "ManageShipping")"><a class="st3" href="@Url.Action("Index", new { area = "StoreShippings", controller = "ManageShipping" })">
+                Hình thức vận chuyển</a> </li>
+        </ul>
+    </div>
+}
