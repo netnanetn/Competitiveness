@@ -20,25 +20,11 @@ namespace Falcon.Modules.Home
                 new { action = "Index", id = UrlParameter.Optional }
             );
             context.MapRoute(
-               "CreateSupport",
-               "CreateSupport.html",
-               new { controller = "Home", action = "CreateSupport" }
+               "Comparetitiveness",
+               "Comparetitiveness.html",
+               new { controller = "Home", action = "Comparetitiveness" }
            );
-            context.MapRoute(
-               "Login",
-               "Login.html",
-               new { controller = "Home", action = "Login" }
-           );
-            context.MapRoute(
-                "Register",
-                "Register.html",
-             new { controller = "Home", action = "Register" }
-           ); 
-            context.MapRoute(
-                 "CheckStatusSupport",
-                  "CheckStatusSupport.html",
-            new { controller = "Home", action = "CheckStatusSupport" }
-           );
+         
         }
     }
 }

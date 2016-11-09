@@ -1,0 +1,195 @@
+﻿<style>
+    #chart {
+        height: 1000px;
+        text-align: center;
+        margin-top: 100px;
+    }
+    #chart polygon{
+        fill-opacity: 0 !important;
+
+    }
+</style>
+
+<div class="body-content">
+    <!-- PAGEBODY START -->
+
+    <div class="banner">
+        <!-- BANNER START -->
+        <div class="container">
+            <h1 class="title1">Phương pháp đánh giá chỉ số năng lực cạnh tranh của ngành bất động sản</h1>
+        </div>
+    </div>
+    <!-- END BANNER -->
+
+    <div class="content">
+        <!-- CONTENT START -->
+        <div class="container">
+
+            <div class="index-wrapper row">
+                <div class="basic-guide container text-center">
+                    <div class="clearfix">
+                        <div class="col-xs-12 col-sm-15 col-md-15">
+                            <a href="#" target="_blank">
+                                <i class="icon-guide step"></i>
+                                <span>Các yếu tố <br> năng lực cạnh tranh</span>
+                            </a>
+                        </div>
+                        <div class="col-xs-12 col-sm-15 col-md-15">
+                            <a href="#" target="_blank">
+                                <i class="icon-guide manual"></i>
+                                <span>Tiêu chí<br>năng lực cạnh tranh</span>
+                            </a>
+                        </div>
+                        <div class="col-xs-12 col-sm-15 col-md-15">
+                            <a href="#" target="_blank">
+                                <i class="icon-guide document"></i>
+                                <span>Thuộc tính <br>năng lực cạnh tranh</span>
+                            </a>
+                        </div>
+                        <div class="col-xs-12 col-sm-15 col-md-15">
+                            <a href="#" target="_blank">
+                                <i class="icon-guide sale"></i>
+                                <span>Đánh giá <br>kết quả đạt được</span>
+
+                            </a>
+                        </div>
+                        <div class="col-xs-12 col-sm-15 col-md-15">
+                            <a href="#" target="_blank">
+                                <i class="icon-guide forum"></i>
+                                <span>Thảo luận <br>kết quả sau nghiên cứu</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<div id="chart"></div>
+</div>
+
+<script type="text/javascript">
+
+    var w = 300,
+	h = 300;
+
+    var colorscale = d3.scale.category10();
+
+    //Legend titles
+    var LegendOptions = ['Importance weight', 'Mean weight'];
+
+    //Data
+    var d = [
+              [
+                { axis: "Management Competency", value: 0.8875 },
+                { axis: "Organizing Competency", value: 0.7063 },
+                { axis: "Teachnological Capability", value: 0.7875 },
+                { axis: "Financial Competency", value: 0.8875 },
+                { axis: "Market Share", value: 0.8938 },
+                { axis: "Social Responsibility", value: 0.7063 },
+                { axis: "Regional Competitiveness", value: 0.7375 },
+                //{ axis: "Buy Online", value: 0.05 },
+                //{ axis: "Stream Music", value: 0.07 },
+                //{ axis: "Online Gaming", value: 0.12 },
+                //{ axis: "Navigation", value: 0.27 },
+                //{ axis: "App connected to TV program", value: 0.03 },
+                //{ axis: "Offline Gaming", value: 0.12 },
+                //{ axis: "Photo Video", value: 0.4 },
+                //{ axis: "Reading", value: 0.03 },
+                //{ axis: "Listen Music", value: 0.22 },
+                //{ axis: "Watch TV", value: 0.03 },
+                //{ axis: "TV Movies Streaming", value: 0.03 },
+                //{ axis: "Listen Radio", value: 0.07 },
+                //{ axis: "Sending Money", value: 0.18 },
+                //{ axis: "Other", value: 0.07 },
+                //{ axis: "Use less Once week", value: 0.08 }
+              ], [
+                { axis: "Management Competency", value: 0.8009 },
+                { axis: "Organizing Competency", value: 0.8009 },
+                { axis: "Teachnological Capability", value: 0.8009 },
+                { axis: "Financial Competency", value: 0.8009 },
+                { axis: "Market Share", value: 0.8009 },
+                { axis: "Social Responsibility", value: 0.8009 },
+                { axis: "Regional Competitiveness", value: 0.8009 },
+                //{ axis: "Buy Online", value: 0.14 },
+                //{ axis: "Stream Music", value: 0.05 },
+                //{ axis: "Online Gaming", value: 0.19 },
+                //{ axis: "Navigation", value: 0.14 },
+                //{ axis: "App connected to TV program", value: 0.06 },
+                //{ axis: "Offline Gaming", value: 0.24 },
+                //{ axis: "Photo Video", value: 0.17 },
+                //{ axis: "Reading", value: 0.15 },
+                //{ axis: "Listen Music", value: 0.12 },
+                //{ axis: "Watch TV", value: 0.1 },
+                //{ axis: "TV Movies Streaming", value: 0.14 },
+                //{ axis: "Listen Radio", value: 0.06 },
+                //{ axis: "Sending Money", value: 0.16 },
+                //{ axis: "Other", value: 0.07 },
+                //{ axis: "Use less Once week", value: 0.17 }
+              ]
+    ];
+
+    //Options for the Radar chart, other than default
+    var mycfg = {
+        w: w,
+        h: h,
+        maxValue: 1,
+        levels: 10,
+        ExtraWidthX: 300
+    }
+
+    //Call function to draw the Radar chart
+    //Will expect that data is in %'s
+    RadarChart.draw("#chart", d, mycfg);
+
+    ////////////////////////////////////////////
+    /////////// Initiate legend ////////////////
+    ////////////////////////////////////////////
+
+    var svg = d3.select('#chart')
+        .selectAll('svg')
+        .append('svg')
+        .attr("width", w + 300)
+        .attr("height", h)
+
+    //Create the title for the legend
+    var text = svg.append("text")
+        .attr("class", "title")
+        .attr('transform', 'translate(90,0)')
+        .attr("x", w - 70)
+        .attr("y", 10)
+        .attr("font-size", "12px")
+        .attr("fill", "#404040")
+        .text("Figure 4.1 Indicates thae weight of importance (in red) and means weight of factors (blue colour) at the First Level");
+
+    //Initiate Legend
+    var legend = svg.append("g")
+        .attr("class", "legend")
+        .attr("height", 100)
+        .attr("width", 200)
+        .attr('transform', 'translate(90,20)')
+    ;
+    //Create colour squares
+    legend.selectAll('rect')
+	  .data(LegendOptions)
+	  .enter()
+	  .append("rect")
+	  .attr("x", w - 65)
+	  .attr("y", function (d, i) { return i * 20; })
+	  .attr("width", 10)
+	  .attr("height", 10)
+	  .style("fill", function (d, i) { return colorscale(i); })
+    ;
+    //Create text next to squares
+    legend.selectAll('text')
+	  .data(LegendOptions)
+	  .enter()
+	  .append("text")
+	  .attr("x", w - 52)
+	  .attr("y", function (d, i) { return i * 20 + 9; })
+	  .attr("font-size", "11px")
+	  .attr("fill", "#737373")
+	  .text(function (d) { return d; })
+    ;
+
+</script>

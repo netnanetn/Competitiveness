@@ -160,10 +160,7 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\CreateSupport.cshtml" />
-    <Content Include="Views\Home\Login.cshtml" />
-    <Content Include="Views\Home\Register.cshtml" />
-    <Content Include="Views\Home\CheckStatusSupport.cshtml" />
+    <Content Include="Views\Home\Comparetitiveness.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -183,10 +180,6 @@
     <ProjectReference Include="..\..\..\Falcon.Data\Falcon.Data.csproj">
       <Project>{0ab94496-b90f-4c22-a152-3f2c30164ab3}</Project>
       <Name>Falcon.Data</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\Falcon.Libraries\FreshdeskApi\FreshdeskApi.csproj">
-      <Project>{be352653-9815-44c1-b390-72319046c013}</Project>
-      <Name>FreshdeskApi</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\Falcon.Services.Core\Falcon.Services.Core.csproj">
       <Project>{dccd1b8e-ee43-473d-a952-0f18caaff942}</Project>
