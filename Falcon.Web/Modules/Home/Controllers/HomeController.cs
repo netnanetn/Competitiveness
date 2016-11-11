@@ -57,5 +57,14 @@ namespace Falcon.Modules.Home.Controllers
             ViewData["CSS"] = "default";
             return View();
         }
+        [Layout("Home")]
+        public ActionResult BuildingData()
+        {
+            Title = "Xây dựng bộ dữ liệu và trọng số";
+            MetaDescription = "Xây dựng dữ liệu";
+            CanonicalLink = FalconConfig.DomainName + Url.Action("BuildingData");
+            ViewData["CSS"] = "default";
+            return View();
+        }
     }
 }

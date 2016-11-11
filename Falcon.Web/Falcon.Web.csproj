@@ -2267,6 +2267,7 @@
     <Content Include="Themes\Portal\Default\Images\img-video-3.jpg" />
     <Content Include="Themes\Portal\Default\Images\img-video-4.jpg" />
     <Content Include="Themes\Portal\Default\Images\logo.png" />
+    <Content Include="Themes\Portal\Default\Images\logo2.png" />
     <Content Include="Themes\Portal\Default\Images\product1.png" />
     <Content Include="Themes\Portal\Default\Images\product2.png" />
     <Content Include="Themes\Portal\Default\Images\totop.png" />

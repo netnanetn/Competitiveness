@@ -161,6 +161,7 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Comparetitiveness.cshtml" />
+    <Content Include="Views\Home\BuildingData.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

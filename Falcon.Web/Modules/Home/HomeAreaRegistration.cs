@@ -24,7 +24,13 @@ namespace Falcon.Modules.Home
                "Comparetitiveness.html",
                new { controller = "Home", action = "Comparetitiveness" }
            );
-         
+              context.MapRoute(
+               "BuildingData",
+               "BuildingData.html",
+               new { controller = "Home", action = "BuildingData" }
+           );
+
+
         }
     }
 }
